@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">screen3</string>
+    <string name="title">Choose A Board Size</string>
+    <string name="small_board">6 x 6</string>
+    <string name="large_board">10 x 7</string>
+    <string name="newgame">New Game</string>
+</resources>

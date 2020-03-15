@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Connect Four</string>
+    <string name="musicVol">Music Volume</string>
+    <string name="soundFXVol">Sound Effects Volume</string>
+    <string name="vsPlayer">vs Player</string>
+    <string name="vsAI">vs AI</string>
+    <string name="gameType">Game Type:</string>
+    <string name="newGame">New Game</string>
+    <string name="boardSize">Select Board Size</string>
+    <string-array name="array_name">
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+    <string name="title_activity_volume_settings">Settings</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+</resources>

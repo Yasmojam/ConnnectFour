@@ -1,0 +1,23 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#7BC8FF</item>
+        <item name="colorPrimaryDark">#51000000</item>
+        <item name="colorAccent">#0026FF</item>
+        <item name="backgroundcolor">#FFFFFF</item>
+        <item name="textcolor">#FFFFFF</item>
+        <item name="buttoncolor">#00BCD4</item>
+    </style>
+
+    <style name="DarkTheme" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#000000</item>
+        <item name="colorPrimaryDark">#72000000</item>
+        <item name="colorAccent">#F44336</item>
+        <item name="backgroundcolor">#818181</item>
+        <item name="textcolor">#090909</item>
+        <item name="buttoncolor">#FF0000</item>
+    </style>
+
+</resources>

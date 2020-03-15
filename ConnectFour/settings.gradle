@@ -1,0 +1,2 @@
+rootProject.name='Connect Four'
+include ':app'

@@ -1,0 +1,85 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/vs_person"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rowSpinner" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="16dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageButton3"
+        app:layout_constraintTop_toBottomOf="@+id/columnSpinner"
+        app:srcCompat="@drawable/vs_bot" />
+
+    <TextView
+        android:id="@+id/boardSizeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/boardSize"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/rowSpinner"
+        android:layout_width="80dp"
+        android:layout_height="27dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:entries="@array/array_name"
+        app:layout_constraintEnd_toEndOf="@+id/imageButton3"
+        app:layout_constraintTop_toTopOf="@+id/rows" />
+
+    <Spinner
+        android:id="@+id/columnSpinner"
+        android:layout_width="80dp"
+        android:layout_height="27dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:entries="@array/array_name"
+        app:layout_constraintEnd_toEndOf="@+id/imageButton2"
+        app:layout_constraintTop_toTopOf="@+id/Columns" />
+
+    <TextView
+        android:id="@+id/rows"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Rows:"
+        app:layout_constraintStart_toStartOf="@+id/imageButton3"
+        app:layout_constraintTop_toBottomOf="@+id/boardSizeText" />
+
+    <TextView
+        android:id="@+id/Columns"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:text="Columns"
+        app:layout_constraintBaseline_toBaselineOf="@+id/rows"
+        app:layout_constraintStart_toStartOf="@+id/imageButton2" />
+</androidx.constraintlayout.widget.ConstraintLayout>

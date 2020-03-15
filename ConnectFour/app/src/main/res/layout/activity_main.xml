@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StartScreenActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:gravity="center"
+        android:text="Connect 4"
+        android:textColor="@android:color/black"
+        android:textSize="48dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:layout_width="124dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="300dp"
+        android:background="?attr/colorButtonNormal"
+        android:text="Start Game"
+        android:textColor="@android:color/primary_text_dark"
+        android:textStyle="bold" />
+
+    <Button
+        android:layout_width="124dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="400dp"
+        android:background="?attr/colorButtonNormal"
+        android:text="Options"
+        android:textColor="@android:color/primary_text_dark"
+        android:textStyle="bold" />
+
+    <Switch
+        android:id="@+id/darkModeSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="500dp"
+        android:text="Dark Mode"
+        android:textColor="@android:color/black" />
+
+
+
+</RelativeLayout>
