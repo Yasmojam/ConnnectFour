@@ -3,48 +3,90 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".StartScreenActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="60dp"
-        android:gravity="center"
-        android:text="Connect 4"
-        android:textColor="@android:color/black"
-        android:textSize="48dp"
-        android:textStyle="bold" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <Button
-        android:layout_width="124dp"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="300dp"
-        android:background="?attr/colorButtonNormal"
-        android:text="Start Game"
-        android:textColor="@android:color/primary_text_dark"
-        android:textStyle="bold" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="111dp"
+            android:layout_marginLeft="111dp"
+            android:layout_marginTop="188dp"
+            android:layout_marginEnd="111dp"
+            android:layout_marginRight="111dp"
+            android:layout_marginBottom="116dp"
+            android:fontFamily="@font/bangers"
+            android:gravity="center"
+            android:text="@string/title"
+            android:textColor="@android:color/black"
+            android:textSize="48dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/startGameButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:layout_width="124dp"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="400dp"
-        android:background="?attr/colorButtonNormal"
-        android:text="Options"
-        android:textColor="@android:color/primary_text_dark"
-        android:textStyle="bold" />
+        <Switch
+            android:id="@+id/darkModeSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="152dp"
+            android:layout_marginLeft="152dp"
+            android:layout_marginTop="66dp"
+            android:layout_marginEnd="152dp"
+            android:layout_marginRight="152dp"
+            android:layout_marginBottom="132dp"
+            android:text="Dark Mode"
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/optionsButton" />
 
-    <Switch
-        android:id="@+id/darkModeSwitch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="500dp"
-        android:text="Dark Mode"
-        android:textColor="@android:color/black" />
 
+        <Button
+            android:id="@+id/startGameButton"
+            android:layout_width="124dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="143dp"
+            android:layout_marginLeft="143dp"
+            android:layout_marginTop="116dp"
+            android:layout_marginEnd="144dp"
+            android:layout_marginRight="144dp"
+            android:layout_marginBottom="46dp"
+            android:background="@android:color/holo_orange_dark"
+            android:text="Start Game"
+            android:textColor="@android:color/primary_text_dark"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/optionsButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <Button
+            android:id="@+id/optionsButton"
+            android:layout_width="124dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="143dp"
+            android:layout_marginLeft="143dp"
+            android:layout_marginTop="47dp"
+            android:layout_marginEnd="143dp"
+            android:layout_marginRight="143dp"
+            android:layout_marginBottom="66dp"
+            android:background="@android:color/holo_orange_dark"
+            android:text="Options"
+            android:textColor="@android:color/primary_text_dark"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/darkModeSwitch"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/startGameButton" />" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </RelativeLayout>

@@ -7,6 +7,11 @@
     <string name="gameType">Game Type:</string>
     <string name="newGame">New Game</string>
     <string name="boardSize">Select Board Size</string>
+    <string name="title">Connect 4</string>
+    <string name="start">START</string>
+    <string name="settings">SETTINGS</string>
+    <string name="paused">Paused</string>
+    <string name="resume">Resume</string>
     <string-array name="array_name">
         <item>6</item>
         <item>7</item>
@@ -30,4 +35,6 @@
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="p1Turn">"Player 1 Turn! "</string>
+    <string name="instructionBoard">"Tap an empty slot to place your counter! "</string>
 </resources>

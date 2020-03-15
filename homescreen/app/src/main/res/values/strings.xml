@@ -1,6 +1,0 @@
-<resources>
-    <string name="app_name">home screen</string>
-    <string name="title">Connect 4</string>
-    <string name="start">START</string>
-    <string name="settings">SETTINGS</string>
-</resources>

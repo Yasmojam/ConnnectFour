@@ -9,9 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Board.BoardActivity"></activity>
+        <activity android:name=".GameBoard" />
+        <activity android:name=".SettingsActivities.PauseActivity" />
+        <activity android:name=".NewGameActivity" />
         <activity
-            android:name=".VolumeSettingsActivity"
-            android:label="@string/title_activity_volume_settings"></activity>
+            android:name=".SettingsActivities.VolumeSettingsActivity"
+            android:label="@string/title_activity_volume_settings" />
         <activity android:name=".StartScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
