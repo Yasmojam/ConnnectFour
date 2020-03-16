@@ -12,7 +12,7 @@
         <activity android:name=".GraphicalSettings"></activity>
         <activity android:name=".Board.GameBoard" />
         <activity android:name=".SettingsActivities.PauseActivity" />
-        <activity android:name=".NewGameActivity" />
+        <activity android:name="NewGameActivity" />
         <activity
             android:name=".SettingsActivities.VolumeSettingsActivity"
             android:label="@string/title_activity_volume_settings" />
