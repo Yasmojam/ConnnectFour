@@ -12,6 +12,11 @@
     <string name="settings">SETTINGS</string>
     <string name="paused">Paused</string>
     <string name="resume">Resume</string>
+    <string name="back">Back</string>
+    <string name="volumeSettingsTitle">Volume Settings</string>
+    <string name="settingsTitle">Settings</string>
+    <string name="graphicsSettingsButton">Graphics Settings</string>
+    <string name="volumeSettingsButton">Volume Settings</string>
     <string-array name="array_name">
         <item>6</item>
         <item>7</item>

@@ -5,45 +5,30 @@ import androidx.appcompat.app.AppCompatDelegate;
 
 import android.os.Bundle;
 import android.content.Intent;
+import android.view.View;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 
 public class StartScreenActivity extends AppCompatActivity {
 
-    private Switch darkMode;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
             setTheme(R.style.ThemeOverlay_AppCompat_Dark);
-        }
-        else {
+        } else {
             setTheme(R.style.AppTheme);
         }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        darkMode = findViewById(R.id.darkModeSwitch);
-        if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
-            darkMode.setChecked(true);
-        }
-        darkMode.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+        Button start = findViewById(R.id.startGameButton);
+        start.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                    restartApp();
-                }
-                else {
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                    restartApp();
-                }
+            public void onClick(View view) {
+                Intent startgame = new Intent(StartScreenActivity.this, NewGameActivity.class);
+                startActivity(startgame);
             }
         });
-    }
-
-    public void restartApp() {
-        Intent intent = new Intent(getApplicationContext(), StartScreenActivity.class);
-        startActivity(intent);
-        finish();
     }
 }

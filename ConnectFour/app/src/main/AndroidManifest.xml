@@ -9,11 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+<<<<<<< HEAD
         <activity android:name=".GraphicalSettings"></activity>
         <activity android:name=".Board.GameBoard"
             android:exported="true"/>
+=======
+        <activity android:name=".SettingsActivities.SettingsActivity"></activity>
+        <activity android:name=".SettingsActivities.GraphicalSettings" />
+        <activity android:name=".Board.GameBoard" />
+>>>>>>> 336a8af8ddd568cceadd31b9e5273a83982771a6
         <activity android:name=".SettingsActivities.PauseActivity" />
-        <activity android:name=".NewGameActivity" />
+        <activity android:name="NewGameActivity" />
         <activity
             android:name=".SettingsActivities.VolumeSettingsActivity"
             android:label="@string/title_activity_volume_settings" />
