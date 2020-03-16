@@ -1,14 +1,14 @@
-package com.example.connectfour;
+package com.example.connectfour.SettingsActivities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
+
+import com.example.connectfour.R;
 
 public class GraphicalSettings extends AppCompatActivity {
 

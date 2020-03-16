@@ -3,11 +3,13 @@ package com.example.connectfour;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Spinner;
+
+import com.example.connectfour.Board.GameBoard;
 
 public class NewGameActivity extends AppCompatActivity {
 
@@ -36,6 +38,16 @@ public class NewGameActivity extends AppCompatActivity {
         columns = 6;
         vsPlayerOnClickListener();
         vsAIOnClickListener();
+
+        ImageButton vsPlayerButton = findViewById(R.id.vsPlayerButton);
+        vsPlayerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent startGame = new Intent(NewGameActivity.this, GameBoard.class);
+                startActivity(startGame);
+            }
+        });
+
 
     }
 
