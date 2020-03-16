@@ -10,7 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".GraphicalSettings"></activity>
-        <activity android:name=".Board.GameBoard" />
+        <activity android:name=".Board.GameBoard"
+            android:exported="true"/>
         <activity android:name=".SettingsActivities.PauseActivity" />
         <activity android:name=".NewGameActivity" />
         <activity
