@@ -6,4 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".GraphicalSettings">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:firstBaselineToTopHeight="50dp"
+        android:gravity="center_horizontal"
+        android:textSize="25dp"
+        android:text="Graphical Settings"
+        ></TextView>
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
