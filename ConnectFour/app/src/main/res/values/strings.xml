@@ -38,4 +38,8 @@
     <string name="p1Turn">"Player 1 Turn! "</string>
     <string name="instructionBoard">"Tap an empty slot to place your counter! "</string>
     <string name="vsBot">VS BOT</string>
+    <string name="rowsSpinner">Rows:</string>
+    <string name="columnsSpinner">Columns:</string>
+    <string name="aiDesc">VS AI Button</string>
+    <string name="vsPlayerButton">VS Player Button</string>
 </resources>

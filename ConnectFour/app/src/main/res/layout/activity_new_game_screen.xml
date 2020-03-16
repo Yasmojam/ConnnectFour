@@ -5,30 +5,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".NewGameActivity">
+
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/vsPlayerButton"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/vs_person"
+        android:background="@color/blue"
+        android:contentDescription="@string/vsPlayerButton"
+        android:scaleType="fitCenter"
+        android:src="@drawable/player_v2"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton2"
+        app:layout_constraintEnd_toStartOf="@+id/vsAIButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rowSpinner" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/vsAIButton"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="16dp"
         android:background="@color/yellow"
+        android:contentDescription="@string/aiDesc"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageButton3"
+        app:layout_constraintStart_toEndOf="@+id/vsPlayerButton"
         app:layout_constraintTop_toBottomOf="@+id/columnSpinner"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/bot_v2" />
@@ -51,7 +55,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:entries="@array/array_name"
-        app:layout_constraintEnd_toEndOf="@+id/imageButton3"
+        app:layout_constraintEnd_toEndOf="@+id/vsPlayerButton"
         app:layout_constraintTop_toTopOf="@+id/rows" />
 
     <Spinner
@@ -61,8 +65,8 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:entries="@array/array_name"
-        app:layout_constraintEnd_toEndOf="@+id/imageButton2"
-        app:layout_constraintTop_toTopOf="@+id/Columns" />
+        app:layout_constraintEnd_toEndOf="@+id/vsAIButton"
+        app:layout_constraintTop_toTopOf="@+id/columns" />
 
     <TextView
         android:id="@+id/rows"
@@ -71,19 +75,19 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
-        android:text="Rows:"
-        app:layout_constraintStart_toStartOf="@+id/imageButton3"
+        android:text="@string/rowsSpinner"
+        app:layout_constraintStart_toStartOf="@+id/vsPlayerButton"
         app:layout_constraintTop_toBottomOf="@+id/boardSizeText" />
 
     <TextView
-        android:id="@+id/Columns"
+        android:id="@+id/columns"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:text="Columns"
+        android:text="@string/columnsSpinner"
         app:layout_constraintBaseline_toBaselineOf="@+id/rows"
-        app:layout_constraintStart_toStartOf="@+id/imageButton2" />
+        app:layout_constraintStart_toStartOf="@+id/vsAIButton" />
 
     <TextView
         android:id="@+id/vsBotText"
@@ -92,11 +96,24 @@
         android:fontFamily="@font/bangers"
         android:gravity="center_horizontal|center_vertical"
         android:padding="8dp"
-        android:text="@string/vsBot"
+        android:text="@string/vsAI"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/imageButton2"
-        app:layout_constraintTop_toTopOf="@+id/imageButton2"
+        app:layout_constraintStart_toStartOf="@+id/vsAIButton"
+        app:layout_constraintTop_toTopOf="@+id/vsAIButton"
         app:layout_constraintVertical_bias="0.68" />
+
+    <TextView
+        android:id="@+id/vsPlayerText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bangers"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:padding="8dp"
+        android:text="@string/vsPlayer"
+        android:textSize="36sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/vsBotText"
+        app:layout_constraintEnd_toEndOf="@+id/vsPlayerButton"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
