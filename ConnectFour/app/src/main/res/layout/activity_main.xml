@@ -13,7 +13,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="111dp"
             android:layout_marginLeft="111dp"
-            android:layout_marginTop="188dp"
+            android:layout_marginTop="140dp"
             android:layout_marginEnd="111dp"
             android:layout_marginRight="111dp"
             android:layout_marginBottom="116dp"
@@ -25,26 +25,9 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/startGameButton"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <Switch
-            android:id="@+id/darkModeSwitch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="152dp"
-            android:layout_marginLeft="152dp"
-            android:layout_marginTop="66dp"
-            android:layout_marginEnd="152dp"
-            android:layout_marginRight="152dp"
-            android:layout_marginBottom="132dp"
-            android:text="Dark Mode"
-            android:textColor="@android:color/black"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/optionsButton" />
-
 
         <Button
             android:id="@+id/startGameButton"
@@ -74,12 +57,10 @@
             android:layout_marginTop="47dp"
             android:layout_marginEnd="143dp"
             android:layout_marginRight="143dp"
-            android:layout_marginBottom="66dp"
             android:background="@android:color/holo_orange_dark"
             android:text="Options"
             android:textColor="@android:color/primary_text_dark"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/darkModeSwitch"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/startGameButton" />" />
