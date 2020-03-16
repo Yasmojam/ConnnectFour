@@ -21,15 +21,17 @@
         android:id="@+id/imageButton2"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="16dp"
-        android:scaleType="centerCrop"
+        android:background="@color/yellow"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageButton3"
         app:layout_constraintTop_toBottomOf="@+id/columnSpinner"
-        app:srcCompat="@drawable/vs_bot" />
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/bot_v2" />
 
     <TextView
         android:id="@+id/boardSizeText"
@@ -82,4 +84,19 @@
         android:text="Columns"
         app:layout_constraintBaseline_toBaselineOf="@+id/rows"
         app:layout_constraintStart_toStartOf="@+id/imageButton2" />
+
+    <TextView
+        android:id="@+id/vsBotText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bangers"
+        android:gravity="center_horizontal|center_vertical"
+        android:padding="8dp"
+        android:text="@string/vsBot"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageButton2"
+        app:layout_constraintTop_toTopOf="@+id/imageButton2"
+        app:layout_constraintVertical_bias="0.68" />
 </androidx.constraintlayout.widget.ConstraintLayout>
