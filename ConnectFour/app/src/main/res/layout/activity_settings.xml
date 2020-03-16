@@ -47,7 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="116dp"
         android:layout_marginLeft="116dp"
-        android:layout_marginTop="216dp"
+        android:layout_marginTop="204dp"
         android:background="#61A0ECE1"
         android:text="@string/graphicsSettingsButton"
         app:layout_constraintStart_toStartOf="parent"
