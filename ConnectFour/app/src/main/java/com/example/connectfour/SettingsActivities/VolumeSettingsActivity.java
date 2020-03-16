@@ -1,6 +1,9 @@
 package com.example.connectfour.SettingsActivities;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import com.example.connectfour.R;
 
@@ -21,20 +24,18 @@ public class VolumeSettingsActivity extends AppCompatActivity {
         }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.volume_settings_activity);
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.volumeSettings, new SettingsFragment())
-                .commit();
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
-    }
 
-    public static class SettingsFragment extends PreferenceFragmentCompat {
-        @Override
-        public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-            setPreferencesFromResource(R.xml.root_preferences, rootKey);
-        }
+        Button back = findViewById(R.id.backButton);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent backtheway = new Intent(VolumeSettingsActivity.this, SettingsActivity.class);
+                startActivity(backtheway);
+            }
+        });
     }
 }
