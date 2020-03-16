@@ -1,8 +1,10 @@
-package com.example.connectfour;
+package com.example.connectfour.Board;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.connectfour.R;
 
 public class GameBoard extends AppCompatActivity {
 

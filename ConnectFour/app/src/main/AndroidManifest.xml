@@ -9,8 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Board.BoardActivity"></activity>
-        <activity android:name=".GameBoard" />
+        <activity android:name=".Board.GameBoard" />
         <activity android:name=".SettingsActivities.PauseActivity" />
         <activity android:name=".NewGameActivity" />
         <activity
