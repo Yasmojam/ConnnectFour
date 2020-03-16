@@ -13,7 +13,7 @@ public class VolumeSettingsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.settings_activity);
+        setContentView(R.layout.volume_settings_activity);
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.volumeSettings, new SettingsFragment())
