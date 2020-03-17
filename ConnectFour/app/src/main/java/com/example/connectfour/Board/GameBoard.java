@@ -5,61 +5,53 @@ import androidx.appcompat.app.AppCompatDelegate;
 
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.ImageView;
 
 import com.example.connectfour.R;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class GameBoard extends AppCompatActivity {
-    ArrayList<ImageView> drawnCounters = new ArrayList<ImageView>(); //list of drawn counters
-    ArrayList<View> listView =  new ArrayList<View>();
 
+    final int boardSize = 47; //7x6
+    int[] image;
+
+    GridView gridView;
+    ArrayList<ImageModel> imageModels;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //DARK MODE
         if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
             setTheme(R.style.ThemeOverlay_AppCompat_Dark);
         }
         else {
             setTheme(R.style.AppTheme);
         }
+
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_game_board);
 
-        final GridView gridView = (GridView) findViewById(R.id.grid_view);
-        final ImageAdapter imageAdapter = new ImageAdapter(this); //Instance of ImageAdapter Class
+        //initialise board to be chosen size and fill with board images
+        image = new int[boardSize];
+        Arrays.fill(image, R.drawable.board);
 
+        gridView = (GridView) findViewById(R.id.grid_view);
 
-        gridView.setAdapter(imageAdapter);
+        imageModels = new ArrayList<ImageModel>();
 
-        /*
-            setOnItemClickListener (AdapterView.OnItemClickListener listener)
-                Register a callback to be invoked when an item
-                in this AdapterView has been clicked.
-                Parameters
-                listener : The callback that will be invoked.
-         */
-        // Set an item click listener for GridView widget
-        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (imageAdapter.getNumCounters()< imageAdapter.getMaxCounters()) {
-                    imageAdapter.setNumCounters(imageAdapter.getNumCounters() +1);
+        for (int i = 0; i < image.length; i++){
+            ImageModel imageModel = new ImageModel();
+            imageModel.setmThumbIds(image[i]);
+            //add to arraylist of imageModels
+            imageModels.add(imageModel);
+        }
 
-                    listView.add(view);
-                    imageAdapter.setView(view);
+        ImageAdapter adapter = new ImageAdapter(getApplicationContext(), imageModels);
+        gridView.setAdapter(adapter);
 
-                    imageAdapter.setSelectedPosition(position);
-                    imageAdapter.addSelectedPositions(position);
-                    imageAdapter.notifyDataSetChanged();
-                }
-            }
-        });
     }
 
 }
