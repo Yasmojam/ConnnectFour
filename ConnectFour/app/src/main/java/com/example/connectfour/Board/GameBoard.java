@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatDelegate;
 
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 
 import com.example.connectfour.R;
@@ -14,7 +16,9 @@ import java.util.Arrays;
 
 public class GameBoard extends AppCompatActivity {
 
-    final int boardSize = 47; //7x6
+    final int boardSize = 42; //7x6
+    final int columns = 7;
+    final int rows = 6;
     int[] image;
 
     GridView gridView;
@@ -39,18 +43,27 @@ public class GameBoard extends AppCompatActivity {
         Arrays.fill(image, R.drawable.board);
 
         gridView = (GridView) findViewById(R.id.grid_view);
+        gridView.setNumColumns(columns);
 
         imageModels = new ArrayList<ImageModel>();
 
         for (int i = 0; i < image.length; i++){
             ImageModel imageModel = new ImageModel();
             imageModel.setmThumbIds(image[i]);
-            //add to arraylist of imageModels
+            //add to array list of imageModels
             imageModels.add(imageModel);
         }
 
         ImageAdapter adapter = new ImageAdapter(getApplicationContext(), imageModels);
         gridView.setAdapter(adapter);
+
+        //item click listener
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+            }
+        });
 
     }
 
