@@ -1,33 +1,33 @@
 package com.example.connectfour.Board;
 
 import android.content.Context;
-import android.view.LayoutInflater;
+import android.graphics.Color;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
-import com.example.connectfour.R;
 
 import java.util.ArrayList;
 
 public class ImageAdapter extends BaseAdapter {
     Context context;
-    ArrayList<ImageModel> ImageModels = new ArrayList<ImageModel>();
+    ArrayList<ImageModel> imageModels = new ArrayList<ImageModel>();
+    ArrayList<ImageView> imageViews = new ArrayList<ImageView>();
 
     public ImageAdapter(Context context, ArrayList<ImageModel> ImageModels){
         this.context = context;
-        this.ImageModels = ImageModels;
+        this.imageModels = ImageModels;
     }
 
     @Override
     public int getCount() {
-        return ImageModels.size();
+        return imageModels.size();
     }
 
     @Override
-    public Object getItem(int position) {
-        return ImageModels.get(position);
+    public ImageModel getItem(int position) {
+        return imageModels.get(position);
     }
 
     @Override
@@ -37,11 +37,28 @@ public class ImageAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        ImageView imageView = new ImageView(context);
-        imageView.setImageResource(ImageModels.get(position).getMThumbId());
-        imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        imageView.setLayoutParams(new GridView.LayoutParams(150, 150));
+        ImageView imageView;
+        if (convertView == null) {
+            imageView = new ImageView(context);
 
+            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            imageView.setLayoutParams(new GridView.LayoutParams(150, 150));
+
+        }
+        else{
+            imageView = (ImageView) convertView;
+        }
+        imageView.setImageResource(imageModels.get(position).getMThumbId());
+        //add to list of image views
+        imageViews.add(imageView);
         return imageView;
+    }
+
+    public ArrayList<ImageView> getImageViews() {
+        return imageViews;
+    }
+
+    public void setBackgroundOfImageView(int position, int colour){
+        imageViews.get(position).setBackgroundColor(colour);
     }
 }

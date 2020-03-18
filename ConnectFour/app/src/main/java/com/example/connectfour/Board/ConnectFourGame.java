@@ -18,6 +18,8 @@ public class ConnectFourGame {
 
     private int lastCol = -1, lastTop = -1; //last move by a player, last column and the top counter ie. row
 
+    private int chosenCol;
+
     public ConnectFourGame(int width, int height) {
         this.width = width;
         this.height = height;
@@ -103,4 +105,42 @@ public class ConnectFourGame {
         return contains(horizontal(), streak) || contains(vertical(), streak)
                 || contains(slashDiagonal(), streak) || contains(blackslashDiagonal(), streak);
     }
+
+    //PLAYER INPUT METHODS AND CHECKS
+    /**Method which sets player's chosen column**/
+    public void setChosenCol(int chosenCol) {
+        this.chosenCol = chosenCol;
+    }
+
+    /**Method which checks if player's chosen column is valid (e.g. not full)**/
+    public boolean isChosenColValid(int chosenCol){
+        if (!(0<= chosenCol && chosenCol < width)){
+            return true;
+        }
+        else{
+            return false;
+            //CONSIDER MAKING TOAST HERE WHICH TELLS PLAYER COLUMN IS FULL.
+        }
+    }
+
+    /**Method which places counter (R or Y) in first available row in the chosen column**/
+    public void placeCounter(char playerCounter, int chosenCol){
+        for (int h = height - 1; h >= 0; h--){
+            if (grid[h][chosenCol] == '.'){
+                grid[lastTop = h][lastCol = chosenCol] = playerCounter; //make this slot the counter
+                return;
+            }
+        }
+    }
+
+    /**Method for processing player turn**/
+    public void chooseAndDrop(char playerCounter, int chosenCol){
+        if (isChosenColValid(chosenCol)){
+            placeCounter(playerCounter, chosenCol);
+        }
+        else{
+            return;
+        }
+    }
+
 }

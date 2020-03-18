@@ -4,10 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.ImageView;
 
 import com.example.connectfour.R;
 
@@ -23,6 +25,7 @@ public class GameBoard extends AppCompatActivity {
 
     GridView gridView;
     ArrayList<ImageModel> imageModels;
+    ArrayList<Integer> filledSlot;
 
 
     @Override
@@ -37,6 +40,8 @@ public class GameBoard extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_board);
+
+        filledSlot = new ArrayList<Integer>();
 
         //initialise board to be chosen size and fill with board images
         image = new int[boardSize];
@@ -61,7 +66,11 @@ public class GameBoard extends AppCompatActivity {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+                //filledSlot.add(position);
+                System.out.println(position);
+                //I DON'T KNOW WHY THIS IS OFF BY 2
+                adapter.setBackgroundOfImageView(position +2, Color.RED);
+                adapter.notifyDataSetChanged();
             }
         });
 

@@ -43,7 +43,7 @@
 
     <!-- Game Board -->
     <string name="playerTurn">"Player 1 Turn! "</string>
-    <string name="instructionBoard">"Tap an empty row to place your counter! "</string>
+    <string name="instructionBoard">"Tap an empty slot to place your counter! "</string>
     <string name="vsBot">VS BOT</string>
     <string name="rowsSpinner">Rows:</string>
     <string name="columnsSpinner">Columns:</string>
