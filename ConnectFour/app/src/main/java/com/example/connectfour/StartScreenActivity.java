@@ -10,6 +10,8 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 
+import com.example.connectfour.SettingsActivities.SettingsActivity;
+
 public class StartScreenActivity extends AppCompatActivity {
 
     @Override
@@ -28,6 +30,15 @@ public class StartScreenActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent startgame = new Intent(StartScreenActivity.this, NewGameActivity.class);
                 startActivity(startgame);
+            }
+        });
+
+        Button options = findViewById(R.id.optionsButton);
+        options.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent startoptions = new Intent(StartScreenActivity.this, SettingsActivity.class);
+                startActivity(startoptions);
             }
         });
     }
