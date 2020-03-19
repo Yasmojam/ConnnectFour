@@ -60,7 +60,7 @@ public class GameBoard extends AppCompatActivity {
 
         TextView playerTurnText = (TextView) findViewById(R.id.playerTurn);
         playerTurnText.setText("Player 1 Turn!");
-        
+
         gridView = (GridView) findViewById(R.id.grid_view);
         gridView.setNumColumns(columns);
 
@@ -84,11 +84,11 @@ public class GameBoard extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //if turn number is even player one colour
                 if (turnNo%2 == 0) {
-                    playerTurnText.setText("Player 1 Turn!");
+                    playerTurnText.setText("Player 2 Turn!");
                     adapter.setBackgroundOfImageView(position, getPlayer1Col());
                 }
                 else{
-                    playerTurnText.setText("Player 2 Turn!");
+                    playerTurnText.setText("Player 1 Turn!");
                     adapter.setBackgroundOfImageView(position, getGetPlayer2Col());
                 }
                 adapter.notifyDataSetChanged();
