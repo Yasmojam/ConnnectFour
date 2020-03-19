@@ -24,6 +24,14 @@
         <item>9</item>
         <item>10</item>
     </string-array>
+    <string-array name="board_size">
+        <item>5x4</item>
+        <item>6x5</item>
+        <item>7x6</item>
+        <item>8x7</item>
+        <item>9x7</item>
+        <item>10x7</item>
+    </string-array>
     <string name="title_activity_volume_settings">Settings</string>
 
     <!-- Preference Titles -->
@@ -47,4 +55,5 @@
     <string name="columnsSpinner">Columns:</string>
     <string name="aiDesc">VS AI Button</string>
     <string name="vsPlayerButton">VS Player Button</string>
+    <string name="boardSizes">Board Size</string>
 </resources>
