@@ -18,9 +18,16 @@ import java.util.Arrays;
 
 public class GameBoard extends AppCompatActivity {
 
-    final int boardSize = 42; //7x6
-    final int columns = 7;
-    final int rows = 6;
+    //TO DO:
+    // THESE WILL BE INIT AS NULL AND SET ONCE INPUT BETWEEN NEW GAME SCREEN IS ESTABLISHED!!
+    int player1Col = Color.RED;
+    int player2Col = Color.YELLOW;
+    int columns = 7;
+    int rows = 6;
+
+
+    final int boardSize = getColumns()*getRows();
+
     int[] image;
 
     GridView gridView;
@@ -40,6 +47,8 @@ public class GameBoard extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_board);
+
+
 
         filledSlot = new ArrayList<Integer>();
 
@@ -64,16 +73,54 @@ public class GameBoard extends AppCompatActivity {
 
         //item click listener
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            //Tracks whose turn it is
+            int turnNo = 0;
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //filledSlot.add(position);
-                System.out.println(position);
-                //I DON'T KNOW WHY THIS IS OFF BY 2
-                adapter.setBackgroundOfImageView(position +2, Color.RED);
+                //if turn number is even player one colour
+                if (turnNo%2 == 0) {
+                    adapter.setBackgroundOfImageView(position, getPlayer1Col());
+                }
+                else{
+                    adapter.setBackgroundOfImageView(position, getGetPlayer2Col());
+                }
                 adapter.notifyDataSetChanged();
+                turnNo++;
             }
         });
-
     }
+
+    public int getPlayer1Col() {
+        return player1Col;
+    }
+
+    public void setPlayer1Col(int player1Col) {
+        this.player1Col = player1Col;
+    }
+
+    public int getGetPlayer2Col() {
+        return player2Col;
+    }
+
+    public void setGetPlayer2Col(int player2Col) {
+        this.player2Col = player2Col;
+    }
+
+    public int getColumns() {
+        return columns;
+    }
+
+    public void setColumns(int columns) {
+        this.columns = columns;
+    }
+
+    public int getRows() {
+        return rows;
+    }
+
+    public void setRows(int rows) {
+        this.rows = rows;
+    }
+
 
 }

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
@@ -41,9 +42,13 @@ public class ImageAdapter extends BaseAdapter {
         if (convertView == null) {
             imageView = new ImageView(context);
 
-            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            imageView.setLayoutParams(new GridView.LayoutParams(150, 150));
-
+            imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
+            //FOR 7X6
+            imageView.setLayoutParams(new GridView.LayoutParams(150,150));
+            //FOR 8X8
+            //imageView.setLayoutParams(new GridView.LayoutParams(150,138));
+            //FOR 6x5
+            //imageView.setLayoutParams(new GridView.LayoutParams(170,170));
         }
         else{
             imageView = (ImageView) convertView;
@@ -58,7 +63,8 @@ public class ImageAdapter extends BaseAdapter {
         return imageViews;
     }
 
-    public void setBackgroundOfImageView(int position, int colour){
-        imageViews.get(position).setBackgroundColor(colour);
+    public void setBackgroundOfImageView(int position , int colour){
+        //I DON'T KNOW WHY THIS IS OFF BY 2
+        imageViews.get(position + 2).setBackgroundColor(colour); //+2
     }
 }
