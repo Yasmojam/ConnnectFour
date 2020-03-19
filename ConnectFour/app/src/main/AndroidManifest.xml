@@ -9,9 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".SettingsActivities.SettingsActivity"></activity>
         <activity android:name=".SettingsActivities.GraphicalSettings" />
-        <activity android:name=".Board.GameBoard" />
+        <activity android:name=".Board.GameBoard"
+            android:exported="true"/>
         <activity android:name=".SettingsActivities.PauseActivity" />
         <activity android:name="NewGameActivity" />
         <activity
@@ -20,7 +22,6 @@
         <activity android:name=".StartScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

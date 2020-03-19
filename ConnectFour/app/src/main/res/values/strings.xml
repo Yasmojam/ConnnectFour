@@ -45,7 +45,9 @@
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
-    <string name="p1Turn">"Player 1 Turn! "</string>
+
+    <!-- Game Board -->
+    <string name="playerTurn">"Player 1 Turn! "</string>
     <string name="instructionBoard">"Tap an empty slot to place your counter! "</string>
     <string name="vsBot">VS BOT</string>
     <string name="rowsSpinner">Rows:</string>
