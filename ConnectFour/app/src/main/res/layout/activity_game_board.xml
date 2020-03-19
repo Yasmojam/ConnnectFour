@@ -40,7 +40,7 @@
         android:layout_marginTop="46dp"
         android:layout_marginEnd="161dp"
         android:layout_marginRight="161dp"
-        android:text="@string/playerTurn"
+        android:text=""
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

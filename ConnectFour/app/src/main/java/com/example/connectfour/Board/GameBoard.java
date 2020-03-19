@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.connectfour.R;
 
@@ -20,6 +21,7 @@ public class GameBoard extends AppCompatActivity {
 
     //TO DO:
     // THESE WILL BE INIT AS NULL AND SET ONCE INPUT BETWEEN NEW GAME SCREEN IS ESTABLISHED!!
+    //Update the player turn view
     int player1Col = Color.RED;
     int player2Col = Color.YELLOW;
     int columns = 7;
@@ -56,6 +58,9 @@ public class GameBoard extends AppCompatActivity {
         image = new int[boardSize];
         Arrays.fill(image, R.drawable.board);
 
+        TextView playerTurnText = (TextView) findViewById(R.id.playerTurn);
+        playerTurnText.setText("Player 1 Turn!");
+        
         gridView = (GridView) findViewById(R.id.grid_view);
         gridView.setNumColumns(columns);
 
@@ -79,9 +84,11 @@ public class GameBoard extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //if turn number is even player one colour
                 if (turnNo%2 == 0) {
+                    playerTurnText.setText("Player 1 Turn!");
                     adapter.setBackgroundOfImageView(position, getPlayer1Col());
                 }
                 else{
+                    playerTurnText.setText("Player 2 Turn!");
                     adapter.setBackgroundOfImageView(position, getGetPlayer2Col());
                 }
                 adapter.notifyDataSetChanged();
