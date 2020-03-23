@@ -40,7 +40,5 @@ public class SettingsActivity extends AppCompatActivity {
                 startActivity(volOptions);
             }
         });
-
-
     }
 }

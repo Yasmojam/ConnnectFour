@@ -4,15 +4,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.connectfour.R;
+import com.example.connectfour.SettingsActivities.PauseActivity;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -95,6 +98,16 @@ public class GameBoard extends AppCompatActivity {
                 turnNo++;
             }
         });
+
+        Button pause = findViewById(R.id.pause);
+        pause.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(GameBoard.this, PauseActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     public int getPlayer1Col() {

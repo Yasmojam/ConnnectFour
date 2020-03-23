@@ -7,6 +7,18 @@
     android:layout_height="match_parent"
     tools:context=".Board.GameBoard">
 
+    <Button
+        style="@style/AppTheme"
+        android:id="@+id/pause"
+        android:layout_width="70dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="16dp"
+        android:text="Pause"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <GridView
         android:id="@+id/grid_view"
         android:layout_width="370sp"
@@ -28,16 +40,19 @@
         android:verticalSpacing="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/boardInstruct" />
+        app:layout_constraintTop_toBottomOf="@+id/boardInstruct"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
+        style="@style/AppTheme"
         android:id="@+id/playerTurn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="160dp"
         android:layout_marginLeft="160dp"
-        android:layout_marginTop="46dp"
+        android:layout_marginTop="92dp"
         android:layout_marginEnd="161dp"
         android:layout_marginRight="161dp"
         android:text=""
@@ -47,17 +62,19 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        style="@style/AppTheme"
         android:id="@+id/boardInstruct"
         android:layout_width="323dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
         android:layout_marginLeft="44dp"
-        android:layout_marginTop="11dp"
+        android:layout_marginTop="64dp"
         android:layout_marginEnd="44dp"
         android:layout_marginRight="44dp"
         android:text="@string/instructionBoard"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/playerTurn" />
 </androidx.constraintlayout.widget.ConstraintLayout>
