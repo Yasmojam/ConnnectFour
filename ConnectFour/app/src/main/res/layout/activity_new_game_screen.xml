@@ -18,7 +18,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/vsAIButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rowSpinner" />
+        app:layout_constraintTop_toBottomOf="@+id/sizeSpinner"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageButton
         android:id="@+id/vsAIButton"
@@ -33,7 +34,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/vsPlayerButton"
-        app:layout_constraintTop_toBottomOf="@+id/columnSpinner"
+        app:layout_constraintTop_toBottomOf="@+id/sizeSpinner"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/bot_v2" />
 
@@ -49,45 +50,30 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
-        android:id="@+id/rowSpinner"
-        android:layout_width="80dp"
+        android:id="@+id/sizeSpinner"
+        android:layout_width="0dp"
         android:layout_height="27dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:entries="@array/array_name"
-        app:layout_constraintEnd_toEndOf="@+id/vsPlayerButton"
-        app:layout_constraintTop_toTopOf="@+id/rows" />
-
-    <Spinner
-        android:id="@+id/columnSpinner"
-        android:layout_width="80dp"
-        android:layout_height="27dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:entries="@array/array_name"
+        android:entries="@array/board_size"
+        android:gravity="center|center_horizontal|center_vertical"
         app:layout_constraintEnd_toEndOf="@+id/vsAIButton"
-        app:layout_constraintTop_toTopOf="@+id/columns" />
+        app:layout_constraintStart_toEndOf="@+id/sizes"
+        app:layout_constraintTop_toBottomOf="@+id/boardSizeText" />
 
     <TextView
-        android:id="@+id/rows"
+        android:id="@+id/sizes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
-        android:text="@string/rowsSpinner"
+        android:text="@string/boardSizes"
         app:layout_constraintStart_toStartOf="@+id/vsPlayerButton"
         app:layout_constraintTop_toBottomOf="@+id/boardSizeText" />
-
-    <TextView
-        android:id="@+id/columns"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:text="@string/columnsSpinner"
-        app:layout_constraintBaseline_toBaselineOf="@+id/rows"
-        app:layout_constraintStart_toStartOf="@+id/vsAIButton" />
 
     <TextView
         android:id="@+id/vsBotText"
