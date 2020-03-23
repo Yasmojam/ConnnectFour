@@ -11,15 +11,20 @@ import android.widget.Spinner;
 
 import com.example.connectfour.Board.GameBoard;
 
+/**
+ * Class for implementing functionality of the new game screen.
+ * Player can select game type (vs Player or vs AI) and choose from a few different pre-set board sizes.
+ */
 public class NewGameActivity extends AppCompatActivity {
 
     private ImageButton vsPlayerButton;
     private ImageButton vsAIButton;
-    private Spinner rowSpinner;
-    private Spinner columnSpinner;
-    private int rows;
-    private int columns;
+    private Spinner sizeSpinner;
 
+    /**
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
@@ -32,64 +37,65 @@ public class NewGameActivity extends AppCompatActivity {
         setContentView(R.layout.activity_new_game_screen);
         vsPlayerButton = findViewById(R.id.vsPlayerButton);
         vsAIButton = findViewById(R.id.vsAIButton);
-        rowSpinner = findViewById(R.id.rowSpinner);
-        columnSpinner = findViewById(R.id.columnSpinner);
-        rows = 6;
-        columns = 6;
+        sizeSpinner = findViewById(R.id.sizeSpinner);
+
+        //Initialises the vs player button
         vsPlayerOnClickListener();
+        //Initialises the vs AI button
         vsAIOnClickListener();
-
-        ImageButton vsPlayerButton = findViewById(R.id.vsPlayerButton);
-        vsPlayerButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent startGame = new Intent(NewGameActivity.this, GameBoard.class);
-                startActivity(startGame);
-            }
-        });
-
-
     }
 
+    /**
+     * Get the String from the spinner containing the board size
+     * @return the selected board size
+     */
+    public String getBoardSize() {
+        return sizeSpinner.getSelectedItem().toString();
+    }
+
+
+    /**
+     * Get the number of rows on the game board selected.
+     * @return number or rows.
+     */
     public int getRows() {
-        return rows;
+        return Integer.parseInt(getBoardSize().substring(0, 1));
     }
 
+    /**
+     * Get the number of columns on the game board selected.
+     * @return number of columns.
+     */
     public int getColumns() {
-        return columns;
+        return Integer.parseInt(getBoardSize().substring(2, 3));
     }
 
-    public void setRows(int rows) {
-        this.rows = rows;
-    }
-
-    public void setColumns(int columns) {
-        this.columns = columns;
-    }
-
-
+    /**
+     * Create new vs Player game when button is clicked.
+     */
     public void vsPlayerOnClickListener() {
         vsPlayerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setSpinnerSelections();
+                Intent startGame = new Intent(NewGameActivity.this, GameBoard.class);
+                //TODO Add implementation of new game that takes into account the selected board size.
+                startActivity(startGame);
             }
         });
-
     }
 
+    /**
+     * Create new vs AI game when button is clicked.
+     */
     public void vsAIOnClickListener() {
         vsAIButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setSpinnerSelections();
+                //TODO Add implementation of new game that takes into account the selected board size.
+                // - Also connect to a new game board screen.
             }
         });
     }
 
-    public void setSpinnerSelections() {
-        setRows((int) rowSpinner.getSelectedItem());
-        setColumns((int) columnSpinner.getSelectedItem());
-    }
 
 }
