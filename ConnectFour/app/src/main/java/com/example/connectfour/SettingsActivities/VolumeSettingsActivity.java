@@ -28,14 +28,5 @@ public class VolumeSettingsActivity extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
-
-        Button back = findViewById(R.id.backButton);
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent backtheway = new Intent(VolumeSettingsActivity.this, SettingsActivity.class);
-                startActivity(backtheway);
-            }
-        });
     }
 }

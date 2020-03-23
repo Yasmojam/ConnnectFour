@@ -8,48 +8,46 @@
 
     <TextView
         android:id="@+id/settingsTitle"
+        style="@style/AppTheme"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginStart="106dp"
         android:layout_marginLeft="106dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="80dp"
         android:layout_marginEnd="105dp"
         android:layout_marginRight="105dp"
-        android:background="#1CD4B8"
+        android:background="@android:color/holo_orange_dark"
         android:ellipsize="end"
         android:gravity="center"
         android:text="@string/settingsTitle"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        style="@style/AppTheme"
         android:id="@+id/volumeSettings"
         android:layout_width="175dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="131dp"
-        android:layout_marginLeft="131dp"
         android:layout_marginTop="60dp"
-        android:layout_marginEnd="131dp"
-        android:layout_marginRight="131dp"
-        android:background="#61A0ECE1"
         android:text="@string/volumeSettingsButton"
+        android:background="@android:color/holo_orange_dark"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.576"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/graphicsSettingsButton" />
 
     <Button
+        style="@style/AppTheme"
         android:id="@+id/graphicsSettingsButton"
         android:layout_width="175dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="116dp"
-        android:layout_marginLeft="116dp"
         android:layout_marginTop="204dp"
-        android:background="#61A0ECE1"
+        android:background="@android:color/holo_orange_dark"
         android:text="@string/graphicsSettingsButton"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/settingsTitle" />
 </androidx.constraintlayout.widget.ConstraintLayout>
