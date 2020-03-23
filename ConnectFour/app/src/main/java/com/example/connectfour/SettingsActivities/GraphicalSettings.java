@@ -9,6 +9,7 @@ import android.widget.CompoundButton;
 import android.widget.Switch;
 
 import com.example.connectfour.R;
+import com.example.connectfour.StartScreenActivity;
 
 public class GraphicalSettings extends AppCompatActivity {
 
@@ -16,6 +17,7 @@ public class GraphicalSettings extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        StartScreenActivity s = new StartScreenActivity();
         if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
             setTheme(R.style.ThemeOverlay_AppCompat_Dark);
         }
