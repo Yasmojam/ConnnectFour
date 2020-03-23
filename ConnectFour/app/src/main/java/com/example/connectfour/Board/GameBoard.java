@@ -1,5 +1,6 @@
 package com.example.connectfour.Board;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
@@ -7,6 +8,7 @@ import androidx.appcompat.app.AppCompatDelegate;
 import android.content.Intent;
 import android.graphics.Color;
 import android.media.MediaPlayer;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -41,8 +43,10 @@ public class GameBoard extends AppCompatActivity {
     ArrayList<Integer> filledSlot;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        MediaPlayer media = MediaPlayer.create(GameBoard.this, R.raw.lol);
         //DARK MODE
         if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
             setTheme(R.style.ThemeOverlay_AppCompat_Dark);
@@ -53,9 +57,8 @@ public class GameBoard extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_board);
-
-        MediaPlayer media = MediaPlayer.create(GameBoard.this, R.raw.lol);
         media.start();
+
 
         filledSlot = new ArrayList<Integer>();
 
@@ -107,7 +110,7 @@ public class GameBoard extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(GameBoard.this, PauseActivity.class);
                 startActivity(intent);
-                media.pause();
+                media.stop();
             }
         });
 
