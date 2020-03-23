@@ -9,7 +9,8 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 
-import com.example.connectfour.Board.GameBoard;
+import com.example.connectfour.Board.VsAIGameBoard;
+import com.example.connectfour.Board.VsPlayerGameBoard;
 
 /**
  * Class for implementing functionality of the new game screen.
@@ -90,7 +91,7 @@ public class NewGameActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 setFromSpinner();
-                Intent startGame = new Intent(NewGameActivity.this, GameBoard.class);
+                Intent startGame = new Intent(NewGameActivity.this, VsPlayerGameBoard.class);
                 //TODO Add implementation of new game that takes into account the selected board size.
                 startGame.putExtra(EXTRA_ROWS, getRows());
                 startGame.putExtra(EXTRA_COLUMNS, getColumns());
@@ -109,6 +110,11 @@ public class NewGameActivity extends AppCompatActivity {
                 setFromSpinner();
                 //TODO Add implementation of new game that takes into account the selected board size.
                 // - Also connect to a new game board screen.
+                Intent startGame = new Intent(NewGameActivity.this, VsAIGameBoard.class);
+                //TODO Add implementation of new game that takes into account the selected board size.
+                startGame.putExtra(EXTRA_ROWS, getRows());
+                startGame.putExtra(EXTRA_COLUMNS, getColumns());
+                startActivity(startGame);
             }
         });
     }

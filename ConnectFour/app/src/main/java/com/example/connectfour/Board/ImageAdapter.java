@@ -1,13 +1,13 @@
 package com.example.connectfour.Board;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AbsListView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+
+import com.example.connectfour.Board.ImageModel;
 
 import java.util.ArrayList;
 
@@ -15,7 +15,6 @@ public class ImageAdapter extends BaseAdapter {
     Context context;
     ArrayList<ImageModel> imageModels = new ArrayList<ImageModel>();
     ArrayList<ImageView> imageViews = new ArrayList<ImageView>();
-    GameBoard gameBoard = new GameBoard();
     private int boardSize;
 
 
