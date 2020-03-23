@@ -8,6 +8,7 @@
 
 
         <TextView
+            style="@style/AppTheme"
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -20,7 +21,6 @@
             android:fontFamily="@font/bangers"
             android:gravity="center"
             android:text="@string/title"
-            android:textColor="@android:color/black"
             android:textSize="48dp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/startGameButton"
@@ -30,6 +30,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
+            style="@style/AppTheme"
             android:id="@+id/startGameButton"
             android:layout_width="124dp"
             android:layout_height="wrap_content"
@@ -41,7 +42,6 @@
             android:layout_marginBottom="46dp"
             android:background="@android:color/holo_orange_dark"
             android:text="Start Game"
-            android:textColor="@android:color/primary_text_dark"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/optionsButton"
             app:layout_constraintEnd_toEndOf="parent"
@@ -49,6 +49,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView" />
 
         <Button
+            style="@style/AppTheme"
             android:id="@+id/optionsButton"
             android:layout_width="124dp"
             android:layout_height="wrap_content"
@@ -59,7 +60,6 @@
             android:layout_marginRight="143dp"
             android:background="@android:color/holo_orange_dark"
             android:text="Options"
-            android:textColor="@android:color/primary_text_dark"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
