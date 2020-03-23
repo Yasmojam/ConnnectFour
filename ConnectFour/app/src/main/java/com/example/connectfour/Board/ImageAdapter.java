@@ -43,6 +43,7 @@ public class ImageAdapter extends BaseAdapter {
             imageView = new ImageView(context);
 
             imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
+            //TODO switch statement for layout.
             //FOR 7X6
             imageView.setLayoutParams(new GridView.LayoutParams(150,150));
             //FOR 8X8
