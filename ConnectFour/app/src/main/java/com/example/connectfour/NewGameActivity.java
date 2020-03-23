@@ -17,9 +17,14 @@ import com.example.connectfour.Board.GameBoard;
  */
 public class NewGameActivity extends AppCompatActivity {
 
+    public static final String EXTRA_ROWS = "com.example.connectfour.Board.EXTRA_ROWS";
+    public static final String EXTRA_COLUMNS = "com.example.connectfour.Board.EXTRA_COLUMNS";
+
     private ImageButton vsPlayerButton;
     private ImageButton vsAIButton;
     private Spinner sizeSpinner;
+    private int rows;
+    private int columns;
 
     /**
      *
@@ -27,6 +32,8 @@ public class NewGameActivity extends AppCompatActivity {
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        rows = 6;
+        columns = 7;
         if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
             setTheme(R.style.ThemeOverlay_AppCompat_Dark);
         }
@@ -70,6 +77,11 @@ public class NewGameActivity extends AppCompatActivity {
         return Integer.parseInt(getBoardSize().substring(2, 3));
     }
 
+    public void setFromSpinner() {
+        columns = Integer.parseInt(getBoardSize().substring(2, 3));
+        rows = Integer.parseInt(getBoardSize().substring(0, 1));
+    }
+
     /**
      * Create new vs Player game when button is clicked.
      */
@@ -77,8 +89,11 @@ public class NewGameActivity extends AppCompatActivity {
         vsPlayerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                setFromSpinner();
                 Intent startGame = new Intent(NewGameActivity.this, GameBoard.class);
                 //TODO Add implementation of new game that takes into account the selected board size.
+                startGame.putExtra(EXTRA_ROWS, getRows());
+                startGame.putExtra(EXTRA_COLUMNS, getColumns());
                 startActivity(startGame);
             }
         });
@@ -91,6 +106,7 @@ public class NewGameActivity extends AppCompatActivity {
         vsAIButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                setFromSpinner();
                 //TODO Add implementation of new game that takes into account the selected board size.
                 // - Also connect to a new game board screen.
             }
