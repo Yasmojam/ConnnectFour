@@ -8,15 +8,11 @@
 
 
         <TextView
-            style="@style/AppTheme"
             android:id="@+id/textView"
-            android:layout_width="wrap_content"
+            style="@style/AppTheme"
+            android:layout_width="189dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="111dp"
-            android:layout_marginLeft="111dp"
-            android:layout_marginTop="140dp"
-            android:layout_marginEnd="111dp"
-            android:layout_marginRight="111dp"
+            android:layout_marginTop="48dp"
             android:layout_marginBottom="116dp"
             android:fontFamily="@font/bangers"
             android:gravity="center"
@@ -25,7 +21,6 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/startGameButton"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
