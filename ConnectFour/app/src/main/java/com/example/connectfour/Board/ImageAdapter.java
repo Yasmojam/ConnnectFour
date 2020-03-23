@@ -50,20 +50,21 @@ public class ImageAdapter extends BaseAdapter {
         if (convertView == null) {
             imageView = new ImageView(context);
 
-            imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
+            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             //TODO switch statement for layout.
             switch (getBoardSize()){
                 case 30:
                     //FOR 6x5
-                    imageView.setLayoutParams(new GridView.LayoutParams(160,160));
+                    imageView.setLayoutParams(new GridView.LayoutParams(205,170));
                     break;
                 case 42:
                     //FOR 7X6
-                    imageView.setLayoutParams(new GridView.LayoutParams(130,130));
+                    imageView.setLayoutParams(new GridView.LayoutParams(180,150));
                     break;
                 case 64:
                     //FOR 8X8
-                    imageView.setLayoutParams(new GridView.LayoutParams(120,120));
+                    imageView.setLayoutParams(new GridView.LayoutParams(130,140));
+                    break;
             }
         }
         else{

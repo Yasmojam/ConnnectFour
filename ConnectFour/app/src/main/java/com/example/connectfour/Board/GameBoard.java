@@ -60,9 +60,9 @@ public class GameBoard extends AppCompatActivity {
 
         // TODO Get rows and columns from new game activity
         Intent intent = getIntent();
-        setRows(intent.getIntExtra(NewGameActivity.EXTRA_ROWS, 6));
-        setColumns(intent.getIntExtra(NewGameActivity.EXTRA_COLUMNS, 7));
-        boardSize = getColumns()*getRows();
+        setRows(intent.getIntExtra(NewGameActivity.EXTRA_ROWS, 0));
+        setColumns(intent.getIntExtra(NewGameActivity.EXTRA_COLUMNS, 0));
+        setBoardSize(getRows(), getColumns());
 
 
         super.onCreate(savedInstanceState);
@@ -160,6 +160,10 @@ public class GameBoard extends AppCompatActivity {
 
     public int getBoardSize(){
         return boardSize;
+    }
+
+    public void setBoardSize(int rows, int columns){
+        boardSize = rows*columns;
     }
 
 
