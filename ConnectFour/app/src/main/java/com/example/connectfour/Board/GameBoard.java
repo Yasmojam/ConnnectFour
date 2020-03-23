@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.media.Image;
 import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
@@ -17,6 +18,7 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.connectfour.NewGameActivity;
 import com.example.connectfour.R;
 import com.example.connectfour.SettingsActivities.PauseActivity;
 
@@ -30,11 +32,11 @@ public class GameBoard extends AppCompatActivity {
     //Update the player turn view
     int player1Col = Color.RED;
     int player2Col = Color.YELLOW;
-    int columns = 8;
-    int rows = 8;
 
-
-    final int boardSize = getColumns()*getRows();
+    // TODO updated these
+    private int rows;
+    private int columns;
+    private int boardSize;
 
     int[] image;
 
@@ -54,6 +56,13 @@ public class GameBoard extends AppCompatActivity {
         else {
             setTheme(R.style.AppTheme);
         }
+
+        // TODO Get rows and columns from new game activity
+        Intent intent = getIntent();
+        setRows(intent.getIntExtra(NewGameActivity.EXTRA_ROWS, 0));
+        setColumns(intent.getIntExtra(NewGameActivity.EXTRA_COLUMNS, 0));
+        boardSize = getColumns()*getRows();
+
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_board);
