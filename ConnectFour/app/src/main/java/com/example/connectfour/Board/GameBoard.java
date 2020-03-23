@@ -48,6 +48,7 @@ public class GameBoard extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         MediaPlayer media = MediaPlayer.create(GameBoard.this, R.raw.lol);
         //DARK MODE
         if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
@@ -59,8 +60,8 @@ public class GameBoard extends AppCompatActivity {
 
         // TODO Get rows and columns from new game activity
         Intent intent = getIntent();
-        setRows(intent.getIntExtra(NewGameActivity.EXTRA_ROWS, 0));
-        setColumns(intent.getIntExtra(NewGameActivity.EXTRA_COLUMNS, 0));
+        setRows(intent.getIntExtra(NewGameActivity.EXTRA_ROWS, 6));
+        setColumns(intent.getIntExtra(NewGameActivity.EXTRA_COLUMNS, 7));
         boardSize = getColumns()*getRows();
 
 
@@ -90,7 +91,7 @@ public class GameBoard extends AppCompatActivity {
             imageModels.add(imageModel);
         }
 
-        ImageAdapter adapter = new ImageAdapter(getApplicationContext(), imageModels);
+        ImageAdapter adapter = new ImageAdapter(getApplicationContext(), imageModels, getBoardSize());
         gridView.setAdapter(adapter);
 
         //item click listener
