@@ -2,7 +2,7 @@
     <string name="app_name">Connect Four</string>
     <string name="musicVol">Music Volume</string>
     <string name="soundFXVol">Sound Effects Volume</string>
-    <string name="vsPlayer">vs Player</string>
+    <string name="vsPlayer">Pass n Play</string>
     <string name="vsAI">vs AI</string>
     <string name="gameType">Game Type:</string>
     <string name="newGame">New Game</string>
