@@ -15,8 +15,15 @@ import com.example.connectfour.SettingsActivities.SettingsActivity;
 
 public class StartScreenActivity extends AppCompatActivity {
 
+    private  MediaPlayer ring;
+
+    public MediaPlayer getChill() {
+        return ring;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        ring = MediaPlayer.create(StartScreenActivity.this, R.raw.chill);
         if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
             setTheme(R.style.ThemeOverlay_AppCompat_Dark);
         } else {
@@ -25,9 +32,11 @@ public class StartScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        MediaPlayer ring = MediaPlayer.create(StartScreenActivity.this, R.raw.chill);
-        ring.start();
-
+        if(getChill().isPlaying()) {
+            getChill().stop(); }
+            else {
+                getChill().start();
+            }
 
         Button start = findViewById(R.id.startGameButton);
         start.setOnClickListener(new View.OnClickListener() {
@@ -35,6 +44,7 @@ public class StartScreenActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent startgame = new Intent(StartScreenActivity.this, NewGameActivity.class);
                 startActivity(startgame);
+                getChill().pause();
             }
         });
 
@@ -46,5 +56,7 @@ public class StartScreenActivity extends AppCompatActivity {
                 startActivity(startoptions);
             }
         });
+
+
     }
 }
