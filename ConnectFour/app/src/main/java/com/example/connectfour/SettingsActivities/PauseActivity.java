@@ -10,8 +10,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import com.example.connectfour.Board.ConnectFourGame;
-import com.example.connectfour.Board.GameBoard;
+import com.example.connectfour.Board.VsPlayerGameBoard;
 import com.example.connectfour.R;
 import com.example.connectfour.StartScreenActivity;
 
@@ -59,7 +58,7 @@ public class PauseActivity extends AppCompatActivity {
         resume.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent returnToGame = new Intent(PauseActivity.this, GameBoard.class);
+                Intent returnToGame = new Intent(PauseActivity.this, VsPlayerGameBoard.class);
                 startActivity(returnToGame);
             }
         });
