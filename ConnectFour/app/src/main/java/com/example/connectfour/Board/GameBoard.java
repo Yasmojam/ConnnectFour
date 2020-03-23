@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.connectfour.NewGameActivity;
@@ -35,20 +36,19 @@ public class GameBoard extends AppCompatActivity {
     // TODO updated these
     private int rows;
     private int columns;
-    final int boardSize = getRows()*getColumns();
-
-
+    private int boardSize;
 
     int[] image;
 
     GridView gridView;
     ArrayList<ImageModel> imageModels;
-    ArrayList<Integer> filledSlotPositions;
+    ArrayList<Integer> filledSlot;
 
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         MediaPlayer media = MediaPlayer.create(GameBoard.this, R.raw.lol);
         //DARK MODE
         if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
@@ -60,8 +60,9 @@ public class GameBoard extends AppCompatActivity {
 
         // TODO Get rows and columns from new game activity
         Intent intent = getIntent();
-        setRows(intent.getIntExtra(NewGameActivity.EXTRA_ROWS, getRows()));
-        setColumns(intent.getIntExtra(NewGameActivity.EXTRA_COLUMNS, getColumns()));
+        setRows(intent.getIntExtra(NewGameActivity.EXTRA_ROWS, 6));
+        setColumns(intent.getIntExtra(NewGameActivity.EXTRA_COLUMNS, 7));
+        boardSize = getColumns()*getRows();
 
 
         super.onCreate(savedInstanceState);
@@ -69,7 +70,7 @@ public class GameBoard extends AppCompatActivity {
         media.start();
 
 
-        filledSlotPositions = new ArrayList<Integer>();
+        filledSlot = new ArrayList<Integer>();
 
         //initialise board to be chosen size and fill with board images
         image = new int[boardSize];
@@ -79,7 +80,7 @@ public class GameBoard extends AppCompatActivity {
         playerTurnText.setText("Player 1 Turn!");
 
         gridView = (GridView) findViewById(R.id.grid_view);
-        gridView.setNumColumns(getColumns());
+        gridView.setNumColumns(columns);
 
         imageModels = new ArrayList<ImageModel>();
 
@@ -90,7 +91,7 @@ public class GameBoard extends AppCompatActivity {
             imageModels.add(imageModel);
         }
 
-        ImageAdapter adapter = new ImageAdapter(getApplicationContext(), imageModels);
+        ImageAdapter adapter = new ImageAdapter(getApplicationContext(), imageModels, getBoardSize());
         gridView.setAdapter(adapter);
 
         //item click listener
@@ -160,4 +161,6 @@ public class GameBoard extends AppCompatActivity {
     public int getBoardSize(){
         return boardSize;
     }
+
+
 }
