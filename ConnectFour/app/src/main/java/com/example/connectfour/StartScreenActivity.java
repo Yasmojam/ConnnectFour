@@ -15,7 +15,7 @@ import com.example.connectfour.SettingsActivities.SettingsActivity;
 
 public class StartScreenActivity extends AppCompatActivity {
 
-    private  MediaPlayer ring;
+    public MediaPlayer ring;
 
     public MediaPlayer getChill() {
         return ring;
@@ -52,8 +52,10 @@ public class StartScreenActivity extends AppCompatActivity {
         options.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent startOptions = new Intent(StartScreenActivity.this, SettingsActivity.class);
-                startActivity(startOptions);
+
+                Intent startoptions = new Intent(StartScreenActivity.this, SettingsActivity.class);
+                startActivity(startoptions);
+                getChill().pause();
             }
         });
 

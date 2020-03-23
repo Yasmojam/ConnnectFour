@@ -1,12 +1,15 @@
 package com.example.connectfour.Board;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.media.Image;
 import android.media.MediaPlayer;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -14,6 +17,7 @@ import android.widget.Button;
 import android.widget.GridView;
 import android.widget.TextView;
 
+import com.example.connectfour.NewGameActivity;
 import com.example.connectfour.R;
 import com.example.connectfour.SettingsActivities.PauseActivity;
 
@@ -27,11 +31,12 @@ public class GameBoard extends AppCompatActivity {
     //Update the player turn view
     int player1Col = Color.RED;
     int player2Col = Color.YELLOW;
-    int columns = 8;
-    int rows = 8;
 
+    // TODO updated these
+    private int rows;
+    private int columns;
+    private int boardSize;
 
-    int boardSize = getColumns()*getRows();
 
     int[] image;
 
@@ -40,8 +45,10 @@ public class GameBoard extends AppCompatActivity {
     ArrayList<Integer> filledSlotPositions;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        MediaPlayer media = MediaPlayer.create(GameBoard.this, R.raw.lol);
         //DARK MODE
         if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
             setTheme(R.style.ThemeOverlay_AppCompat_Dark);
@@ -50,11 +57,16 @@ public class GameBoard extends AppCompatActivity {
             setTheme(R.style.AppTheme);
         }
 
+        // TODO Get rows and columns from new game activity
+        Intent intent = getIntent();
+        setRows(intent.getIntExtra(NewGameActivity.EXTRA_ROWS, 0));
+        setColumns(intent.getIntExtra(NewGameActivity.EXTRA_COLUMNS, 0));
+        setBoardSize(getRows(), getColumns());
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_board);
-
-        MediaPlayer media = MediaPlayer.create(GameBoard.this, R.raw.lol);
         media.start();
+
 
         filledSlotPositions = new ArrayList<Integer>();
 
@@ -66,7 +78,7 @@ public class GameBoard extends AppCompatActivity {
         playerTurnText.setText("Player 1 Turn!");
 
         gridView = (GridView) findViewById(R.id.grid_view);
-        gridView.setNumColumns(columns);
+        gridView.setNumColumns(getColumns());
 
         imageModels = new ArrayList<ImageModel>();
 
@@ -106,7 +118,7 @@ public class GameBoard extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(GameBoard.this, PauseActivity.class);
                 startActivity(intent);
-                media.pause();
+                media.stop();
             }
         });
 
@@ -148,5 +160,7 @@ public class GameBoard extends AppCompatActivity {
         return boardSize;
     }
 
-
+    public void setBoardSize(int rows, int cols){
+        boardSize = rows*cols;
+    }
 }

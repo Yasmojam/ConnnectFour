@@ -35,7 +35,6 @@
         android:focusable="true"
         android:gravity="center"
         android:horizontalSpacing="1dp"
-        android:numColumns="7"
         android:stretchMode="spacingWidth"
         android:verticalSpacing="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
