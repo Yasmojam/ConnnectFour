@@ -106,6 +106,7 @@ public class GameBoard extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(GameBoard.this, PauseActivity.class);
                 startActivity(intent);
+                media.pause();
             }
         });
 
