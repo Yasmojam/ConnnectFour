@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -53,7 +54,8 @@ public class GameBoard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_board);
 
-
+        MediaPlayer media = MediaPlayer.create(GameBoard.this, R.raw.lol);
+        media.start();
 
         filledSlot = new ArrayList<Integer>();
 
