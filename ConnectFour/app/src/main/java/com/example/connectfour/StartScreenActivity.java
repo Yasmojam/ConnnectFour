@@ -52,6 +52,7 @@ public class StartScreenActivity extends AppCompatActivity {
         options.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Intent startoptions = new Intent(StartScreenActivity.this, SettingsActivity.class);
                 startActivity(startoptions);
                 getChill().pause();
