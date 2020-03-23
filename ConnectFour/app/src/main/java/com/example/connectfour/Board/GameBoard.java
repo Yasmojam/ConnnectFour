@@ -31,7 +31,7 @@ public class GameBoard extends AppCompatActivity {
     int rows = 8;
 
 
-    final int boardSize = getColumns()*getRows();
+    int boardSize = getColumns()*getRows();
 
     int[] image;
 
