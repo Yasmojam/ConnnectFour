@@ -27,8 +27,8 @@ public class GameBoard extends AppCompatActivity {
     //Update the player turn view
     int player1Col = Color.RED;
     int player2Col = Color.YELLOW;
-    int columns = 7;
-    int rows = 6;
+    int columns = 8;
+    int rows = 8;
 
 
     final int boardSize = getColumns()*getRows();
@@ -140,6 +140,10 @@ public class GameBoard extends AppCompatActivity {
 
     public void setRows(int rows) {
         this.rows = rows;
+    }
+
+    public int getBoardSize(){
+        return boardSize;
     }
 
 

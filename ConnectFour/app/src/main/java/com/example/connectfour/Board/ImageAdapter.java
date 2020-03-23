@@ -15,6 +15,8 @@ public class ImageAdapter extends BaseAdapter {
     Context context;
     ArrayList<ImageModel> imageModels = new ArrayList<ImageModel>();
     ArrayList<ImageView> imageViews = new ArrayList<ImageView>();
+    GameBoard gameBoard = new GameBoard();
+
 
     public ImageAdapter(Context context, ArrayList<ImageModel> ImageModels){
         this.context = context;
@@ -44,12 +46,19 @@ public class ImageAdapter extends BaseAdapter {
 
             imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
             //TODO switch statement for layout.
-            //FOR 7X6
-            imageView.setLayoutParams(new GridView.LayoutParams(150,150));
-            //FOR 8X8
-            //imageView.setLayoutParams(new GridView.LayoutParams(150,138));
-            //FOR 6x5
-            //imageView.setLayoutParams(new GridView.LayoutParams(170,170));
+            switch (gameBoard.getBoardSize()){
+                case 30:
+                    //FOR 6x5
+                    imageView.setLayoutParams(new GridView.LayoutParams(170,170));
+                    break;
+                case 42:
+                    //FOR 7X6
+                    imageView.setLayoutParams(new GridView.LayoutParams(150,150));
+                    break;
+                case 64:
+                    //FOR 8X8
+                    imageView.setLayoutParams(new GridView.LayoutParams(150,138));
+            }
         }
         else{
             imageView = (ImageView) convertView;
