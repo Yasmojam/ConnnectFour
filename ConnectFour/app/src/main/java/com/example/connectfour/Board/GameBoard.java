@@ -12,7 +12,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.connectfour.R;
@@ -38,7 +37,7 @@ public class GameBoard extends AppCompatActivity {
 
     GridView gridView;
     ArrayList<ImageModel> imageModels;
-    ArrayList<Integer> filledSlot;
+    ArrayList<Integer> filledSlotPositions;
 
 
     @Override
@@ -57,7 +56,7 @@ public class GameBoard extends AppCompatActivity {
         MediaPlayer media = MediaPlayer.create(GameBoard.this, R.raw.lol);
         media.start();
 
-        filledSlot = new ArrayList<Integer>();
+        filledSlotPositions = new ArrayList<Integer>();
 
         //initialise board to be chosen size and fill with board images
         image = new int[boardSize];
