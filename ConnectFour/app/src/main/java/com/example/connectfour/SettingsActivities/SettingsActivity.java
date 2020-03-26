@@ -38,6 +38,7 @@ public class SettingsActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent volOptions = new Intent(SettingsActivity.this, VolumeSettingsActivity.class);
                 startActivity(volOptions);
+
             }
         });
     }
