@@ -9,6 +9,7 @@
 
     <Button
         style="@style/AppTheme"
+        android:background="#00FFFFFF"
         android:id="@+id/pause"
         android:layout_width="70dp"
         android:layout_height="36dp"
@@ -62,6 +63,7 @@
 
     <TextView
         style="@style/AppTheme"
+        android:background="#00FFFFFF"
         android:id="@+id/boardInstruct"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

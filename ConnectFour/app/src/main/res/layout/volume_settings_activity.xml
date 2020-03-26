@@ -5,7 +5,6 @@
         android:id="@+id/volumeSettings"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/gradient"
         tools:context=".SettingsActivities.VolumeSettingsActivity">
 
 
@@ -55,6 +54,7 @@
         android:layout_marginBottom="16dp"
         android:text="@string/musicVol"
         android:textSize="18sp"
+        android:background="#00FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/musicSlider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -71,30 +71,45 @@
             android:layout_marginRight="16dp"
             android:layout_marginBottom="16dp"
             android:textSize="18sp"
+            android:background="#00FFFFFF"
             android:text="@string/soundFXVol"
             app:layout_constraintBottom_toTopOf="@+id/soundFXSlider"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        style="@style/AppTheme"
         android:id="@+id/stringTitle"
+        style="@style/AppTheme"
         android:layout_width="300dp"
         android:layout_height="50dp"
+        android:background="#00FFFFFF"
         android:layout_marginStart="176dp"
         android:layout_marginLeft="176dp"
         android:layout_marginTop="64dp"
         android:layout_marginEnd="176dp"
         android:layout_marginRight="176dp"
-        android:background=""
+        android:fontFamily="@font/bangers"
+
         android:gravity="center"
         android:text="@string/volumeSettingsTitle"
-        android:fontFamily="@font/bangers"
         android:textSize="35sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_rounded"
+        android:text="@string/Back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/soundFXSlider"
+        app:layout_constraintVertical_bias="0.255" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
