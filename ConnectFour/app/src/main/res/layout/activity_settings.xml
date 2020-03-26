@@ -29,7 +29,6 @@
         android:id="@+id/graphicsSettingsButton"
         android:layout_width="175dp"
         android:layout_height="100dp"
-        android:layout_marginTop="144dp"
         android:background="@drawable/btn_rounded"
         android:padding="15dp"
         android:text="@string/graphicsSettingsButton"
@@ -42,7 +41,6 @@
         android:id="@+id/volumeSettings"
         android:layout_width="175dp"
         android:layout_height="100dp"
-        android:layout_marginTop="64dp"
         android:background="@drawable/btn_rounded"
         android:padding="15dp"
         android:text="@string/volumeSettingsButton"
@@ -50,6 +48,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/graphicsSettingsButton" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_rounded"
+        android:text="@string/back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/volumeSettings"
+        app:layout_constraintVertical_bias="0.284"
+        tools:text="@string/back" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
