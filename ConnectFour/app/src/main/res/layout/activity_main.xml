@@ -7,7 +7,6 @@
     tools:context=".StartScreenActivity">
 
         <TextView
-            style="@style/AppTheme"
             android:id="@+id/textView"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
