@@ -33,6 +33,7 @@
         android:padding="15dp"
         android:text="@string/graphicsSettingsButton"
         android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/volumeSettings"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/settingsTitle" />
@@ -41,10 +42,12 @@
         android:id="@+id/volumeSettings"
         android:layout_width="175dp"
         android:layout_height="100dp"
+        android:layout_marginBottom="98dp"
         android:background="@drawable/btn_rounded"
         android:padding="15dp"
         android:text="@string/volumeSettingsButton"
         android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/button4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/graphicsSettingsButton" />

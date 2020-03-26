@@ -77,8 +77,8 @@
             app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        style="@style/AppTheme"
         android:id="@+id/stringTitle"
+        style="@style/AppTheme"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginStart="176dp"
@@ -86,10 +86,9 @@
         android:layout_marginTop="64dp"
         android:layout_marginEnd="176dp"
         android:layout_marginRight="176dp"
-        android:background="@drawable/gradient"
+        android:fontFamily="@font/bangers"
         android:gravity="center"
         android:text="@string/volumeSettingsTitle"
-        android:fontFamily="@font/bangers"
         android:textSize="35sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
