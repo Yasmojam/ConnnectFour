@@ -48,7 +48,7 @@ public class StartScreenActivity extends AppCompatActivity {
             }
         });
 
-        Button options = findViewById(R.id.optionsButton);
+        Button options = findViewById(R.id.settings_button);
         options.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

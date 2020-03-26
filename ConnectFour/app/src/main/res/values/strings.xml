@@ -8,7 +8,7 @@
     <string name="newGame">New Game</string>
     <string name="boardSize">Select Board Size</string>
     <string name="title">Connect 4</string>
-    <string name="start">START</string>
+    <string name="start">START GAME</string>
     <string name="settings">SETTINGS</string>
     <string name="paused">Paused</string>
     <string name="resume">Resume</string>
