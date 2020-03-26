@@ -108,7 +108,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/back"
         android:layout_width="108dp"
         android:layout_height="31dp"
         android:background="@drawable/btn_rounded"

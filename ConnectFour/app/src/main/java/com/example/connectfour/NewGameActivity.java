@@ -120,6 +120,17 @@ public class NewGameActivity extends AppCompatActivity {
         });
     }
 
+    public void goBack () {
+        Button back = findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent goBack = new Intent(NewGameActivity.this, StartScreenActivity.class);
+                startActivity(goBack);
+            }
+        });
+    }
+
 
 
 
