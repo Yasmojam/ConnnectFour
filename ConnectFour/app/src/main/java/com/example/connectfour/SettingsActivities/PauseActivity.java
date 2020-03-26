@@ -19,7 +19,7 @@ public class PauseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
-            setTheme(R.style.ThemeOverlay_AppCompat_Dark);
+            setTheme(R.style.DarkTheme);;
         }
         else {
             setTheme(R.style.AppTheme);

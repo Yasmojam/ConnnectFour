@@ -25,7 +25,7 @@ public class StartScreenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         ring = MediaPlayer.create(StartScreenActivity.this, R.raw.chill);
         if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
-            setTheme(R.style.ThemeOverlay_AppCompat_Dark);
+            setTheme(R.style.DarkTheme);
         } else {
             setTheme(R.style.AppTheme);
         }

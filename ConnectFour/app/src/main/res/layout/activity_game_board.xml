@@ -8,7 +8,6 @@
     tools:context=".Board.VsPlayerGameBoard">
 
     <Button
-        style="@style/AppTheme"
         android:background="#00FFFFFF"
         android:id="@+id/pause"
         android:layout_width="70dp"
@@ -62,7 +61,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        style="@style/AppTheme"
         android:background="#00FFFFFF"
         android:id="@+id/boardInstruct"
         android:layout_width="match_parent"

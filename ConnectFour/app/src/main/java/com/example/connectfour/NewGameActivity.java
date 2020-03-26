@@ -37,7 +37,7 @@ public class NewGameActivity extends AppCompatActivity {
         rows = 6;
         columns = 7;
         if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
-            setTheme(R.style.ThemeOverlay_AppCompat_Dark);
+            setTheme(R.style.DarkTheme);
         }
         else {
             setTheme(R.style.AppTheme);
