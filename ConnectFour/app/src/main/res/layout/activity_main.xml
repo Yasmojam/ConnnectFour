@@ -4,12 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient"
     tools:context=".StartScreenActivity">
 
         <TextView
-            android:id="@+id/textView"
             style="@style/AppTheme"
+            android:id="@+id/textView"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="128dp"
@@ -18,7 +17,7 @@
             android:text="@string/title"
             android:textSize="72dp"
             android:textStyle="bold"
-
+            android:background="#00FFFFFF"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"

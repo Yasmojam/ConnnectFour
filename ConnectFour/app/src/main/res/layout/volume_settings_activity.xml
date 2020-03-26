@@ -5,7 +5,6 @@
         android:id="@+id/volumeSettings"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/gradient"
         tools:context=".SettingsActivities.VolumeSettingsActivity">
 
 
@@ -55,6 +54,7 @@
         android:layout_marginBottom="16dp"
         android:text="@string/musicVol"
         android:textSize="18sp"
+        android:background="#00FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/musicSlider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -71,6 +71,7 @@
             android:layout_marginRight="16dp"
             android:layout_marginBottom="16dp"
             android:textSize="18sp"
+            android:background="#00FFFFFF"
             android:text="@string/soundFXVol"
             app:layout_constraintBottom_toTopOf="@+id/soundFXSlider"
             app:layout_constraintEnd_toEndOf="parent"
@@ -81,12 +82,14 @@
         style="@style/AppTheme"
         android:layout_width="300dp"
         android:layout_height="50dp"
+        android:background="#00FFFFFF"
         android:layout_marginStart="176dp"
         android:layout_marginLeft="176dp"
         android:layout_marginTop="64dp"
         android:layout_marginEnd="176dp"
         android:layout_marginRight="176dp"
         android:fontFamily="@font/bangers"
+
         android:gravity="center"
         android:text="@string/volumeSettingsTitle"
         android:textSize="35sp"
