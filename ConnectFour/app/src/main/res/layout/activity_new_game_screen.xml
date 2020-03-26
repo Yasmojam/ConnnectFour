@@ -40,10 +40,11 @@
 
     <TextView
         android:id="@+id/boardSizeText"
+        android:background="#00FFFFFF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="168dp"
+        android:layout_marginLeft="168dp"
         android:layout_marginTop="16dp"
         android:text="@string/boardSize"
         app:layout_constraintStart_toStartOf="parent"
@@ -72,6 +73,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         android:text="@string/boardSizes"
+        android:background="#00FFFFFF"
         app:layout_constraintStart_toStartOf="@+id/vsPlayerButton"
         app:layout_constraintTop_toBottomOf="@+id/boardSizeText" />
 
@@ -84,6 +86,7 @@
         android:padding="8dp"
         android:text="@string/vsAI"
         android:textSize="36sp"
+        android:background="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/vsAIButton"
@@ -93,6 +96,7 @@
     <TextView
         android:id="@+id/vsPlayerText"
         android:layout_width="0dp"
+        android:background="#00FFFFFF"
         android:layout_height="wrap_content"
         android:fontFamily="@font/bangers"
         android:gravity="center|center_horizontal|center_vertical"
@@ -102,4 +106,18 @@
         app:layout_constraintBaseline_toBaselineOf="@+id/vsBotText"
         app:layout_constraintEnd_toEndOf="@+id/vsPlayerButton"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="108dp"
+        android:layout_height="31dp"
+        android:background="@drawable/btn_rounded"
+        android:text="@string/Back"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/sizes"
+        app:layout_constraintEnd_toStartOf="@+id/boardSizeText"
+        app:layout_constraintHorizontal_bias="0.266"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/back" />
 </androidx.constraintlayout.widget.ConstraintLayout>
