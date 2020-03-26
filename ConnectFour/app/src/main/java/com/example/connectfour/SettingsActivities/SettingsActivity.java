@@ -41,6 +41,8 @@ public class SettingsActivity extends AppCompatActivity {
                 startActivity(volOptions);
             }
         });
+
+        goBack();
     }
 
     public void goBack() {

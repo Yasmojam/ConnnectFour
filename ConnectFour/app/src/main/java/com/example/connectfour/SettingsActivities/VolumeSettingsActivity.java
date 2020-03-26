@@ -28,6 +28,8 @@ public class VolumeSettingsActivity extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
+
+        goBack();
     }
 
     public void goBack () {

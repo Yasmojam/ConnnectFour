@@ -52,6 +52,8 @@ public class NewGameActivity extends AppCompatActivity {
         vsPlayerOnClickListener();
         //Initialises the vs AI button
         vsAIOnClickListener();
+
+        goBack();
     }
 
     /**

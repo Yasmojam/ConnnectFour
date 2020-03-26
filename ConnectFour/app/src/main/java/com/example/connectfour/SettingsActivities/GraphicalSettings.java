@@ -45,6 +45,8 @@ public class GraphicalSettings extends AppCompatActivity {
                 }
             }
         });
+
+        goBack();
     }
     public void restartApp() {
         Intent intent = new Intent(getApplicationContext(), GraphicalSettings.class);
