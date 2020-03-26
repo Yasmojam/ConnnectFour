@@ -7,7 +7,6 @@
     tools:context=".SettingsActivities.GraphicalSettings">
 
     <TextView
-        style="@style/AppTheme"
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -24,7 +23,6 @@
 
     <Switch
         android:id="@+id/darkModeSwitch"
-        style="@style/AppTheme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:lineSpacingExtra="10sp"

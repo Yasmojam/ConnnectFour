@@ -42,7 +42,6 @@
         app:layout_constraintTop_toBottomOf="@+id/musicText" />
 
     <TextView
-        style="@style/AppTheme"
         android:id="@+id/musicText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -61,7 +60,6 @@
         app:layout_constraintTop_toBottomOf="@+id/stringTitle" />
 
         <TextView
-            style="@style/AppTheme"
             android:id="@+id/soundFxText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -79,7 +77,6 @@
 
     <TextView
         android:id="@+id/stringTitle"
-        style="@style/AppTheme"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:background="#00FFFFFF"

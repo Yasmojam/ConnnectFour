@@ -48,7 +48,7 @@ public class VsAIGameBoard extends AppCompatActivity {
         MediaPlayer media = MediaPlayer.create(VsAIGameBoard.this, R.raw.lol);
         //DARK MODE
         if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
-            setTheme(R.style.ThemeOverlay_AppCompat_Dark);
+            setTheme(R.style.DarkTheme);;
         }
         else {
             setTheme(R.style.AppTheme);
