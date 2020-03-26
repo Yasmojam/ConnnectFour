@@ -9,9 +9,9 @@
     <Button
         android:id="@+id/resume"
         style="@style/AppTheme"
-        android:layout_width="136dp"
-        android:layout_height="47dp"
-        android:background="@android:color/holo_orange_dark"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:background="@drawable/btn_rounded"
         android:text="@string/resume"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:typeface="normal"
