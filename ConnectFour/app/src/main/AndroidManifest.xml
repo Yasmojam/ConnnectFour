@@ -15,18 +15,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Board.VsAIGameBoard"></activity>
-        <activity android:name=".SettingsActivities.SettingsActivity" />
-        <activity android:name=".SettingsActivities.GraphicalSettings" />
+        <activity android:name=".Board.VsAIGameBoard"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".SettingsActivities.SettingsActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".SettingsActivities.GraphicalSettings"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Board.VsPlayerGameBoard"
+            android:screenOrientation="portrait"
             android:exported="true" />
-        <activity android:name=".SettingsActivities.PauseActivity" />
-        <activity android:name=".NewGameActivity" />
+        <activity android:name=".SettingsActivities.PauseActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".NewGameActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".SettingsActivities.VolumeSettingsActivity"
+            android:screenOrientation="portrait"
             android:label="@string/title_activity_volume_settings" />
-        <activity android:name=".StartScreenActivity">
+        <activity android:name=".StartScreenActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
