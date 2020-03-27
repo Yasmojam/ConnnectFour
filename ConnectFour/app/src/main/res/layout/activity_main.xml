@@ -7,7 +7,6 @@
     tools:context=".StartScreenActivity">
 
         <TextView
-            style="@style/AppTheme"
             android:id="@+id/textView"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
@@ -20,7 +19,7 @@
 
             android:fontFamily="@font/bangers"
             android:gravity="center"
-            android:text="@string/title"
+            android:text="@string/appName_title"
             android:textSize="72dp"
             android:textStyle="bold"
 
@@ -43,7 +42,7 @@
             android:layout_marginBottom="32dp"
             android:background="@drawable/btn_rounded"
             android:padding="15dp"
-            android:text="@string/start"
+            android:text="@string/start_button"
             android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/settings_button"
             app:layout_constraintEnd_toEndOf="parent"
@@ -62,7 +61,7 @@
             android:layout_marginBottom="167dp"
             android:background="@drawable/btn_rounded"
             android:padding="15dp"
-            android:text="@string/settings"
+            android:text="@string/settings_button"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

@@ -37,7 +37,7 @@ public class NewGameActivity extends AppCompatActivity {
         rows = 6;
         columns = 7;
         if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
-            setTheme(R.style.ThemeOverlay_AppCompat_Dark);
+            setTheme(R.style.DarkTheme);
         }
         else {
             setTheme(R.style.AppTheme);
@@ -52,6 +52,8 @@ public class NewGameActivity extends AppCompatActivity {
         vsPlayerOnClickListener();
         //Initialises the vs AI button
         vsAIOnClickListener();
+
+        goBack();
     }
 
     /**
@@ -116,6 +118,17 @@ public class NewGameActivity extends AppCompatActivity {
                 startGame.putExtra(EXTRA_ROWS, getRows());
                 startGame.putExtra(EXTRA_COLUMNS, getColumns());
                 startActivity(startGame);
+            }
+        });
+    }
+
+    public void goBack () {
+        Button back = findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent goBack = new Intent(NewGameActivity.this, StartScreenActivity.class);
+                startActivity(goBack);
             }
         });
     }

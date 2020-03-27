@@ -21,7 +21,7 @@ public class GraphicalSettings extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         StartScreenActivity s = new StartScreenActivity();
         if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
-            setTheme(R.style.ThemeOverlay_AppCompat_Dark);
+            setTheme(R.style.DarkTheme);;
         }
         else {
             setTheme(R.style.AppTheme);
@@ -45,11 +45,24 @@ public class GraphicalSettings extends AppCompatActivity {
                 }
             }
         });
+
+        goBack();
     }
     public void restartApp() {
         Intent intent = new Intent(getApplicationContext(), GraphicalSettings.class);
         startActivity(intent);
         finish();
+    }
+
+    public void goBack () {
+        Button back = findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent goBack = new Intent(GraphicalSettings.this, SettingsActivity.class);
+                startActivity(goBack);
+            }
+        });
     }
 
 }

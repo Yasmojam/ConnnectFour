@@ -10,13 +10,14 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.connectfour.R;
+import com.example.connectfour.StartScreenActivity;
 
 public class SettingsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
-            setTheme(R.style.ThemeOverlay_AppCompat_Dark);
+            setTheme(R.style.DarkTheme);
         } else {
             setTheme(R.style.AppTheme);
         }
@@ -38,8 +39,21 @@ public class SettingsActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent volOptions = new Intent(SettingsActivity.this, VolumeSettingsActivity.class);
                 startActivity(volOptions);
+            }
+        });
 
+        goBack();
+    }
+
+    public void goBack() {
+        Button button4 = findViewById(R.id.button4);
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent goBack = new Intent(SettingsActivity.this, StartScreenActivity.class);
+                startActivity(goBack);
             }
         });
     }
+
 }

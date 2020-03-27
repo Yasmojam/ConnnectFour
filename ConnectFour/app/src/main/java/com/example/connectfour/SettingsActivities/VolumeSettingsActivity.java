@@ -17,7 +17,7 @@ public class VolumeSettingsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
-            setTheme(R.style.ThemeOverlay_AppCompat_Dark);
+            setTheme(R.style.DarkTheme);
         }
         else {
             setTheme(R.style.AppTheme);
@@ -28,6 +28,19 @@ public class VolumeSettingsActivity extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
+
+        goBack();
+    }
+
+    public void goBack () {
+        Button back = findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent goBack = new Intent(VolumeSettingsActivity.this, SettingsActivity.class);
+                startActivity(goBack);
+            }
+        });
     }
 
 

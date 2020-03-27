@@ -46,7 +46,7 @@
         android:layout_marginStart="168dp"
         android:layout_marginLeft="168dp"
         android:layout_marginTop="16dp"
-        android:text="@string/boardSize"
+        android:text="@string/boardSize_text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -84,7 +84,7 @@
         android:fontFamily="@font/bangers"
         android:gravity="center_horizontal|center_vertical"
         android:padding="8dp"
-        android:text="@string/vsAI"
+        android:text="@string/vsAI_button"
         android:textSize="36sp"
         android:background="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -101,14 +101,14 @@
         android:fontFamily="@font/bangers"
         android:gravity="center|center_horizontal|center_vertical"
         android:padding="8dp"
-        android:text="@string/vsPlayer"
+        android:text="@string/vsPlayer_button"
         android:textSize="36sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/vsBotText"
         app:layout_constraintEnd_toEndOf="@+id/vsPlayerButton"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/back"
         android:layout_width="108dp"
         android:layout_height="31dp"
         android:background="@drawable/btn_rounded"
@@ -119,5 +119,5 @@
         app:layout_constraintHorizontal_bias="0.266"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="@string/back" />
+        tools:text="@string/back_button" />
 </androidx.constraintlayout.widget.ConstraintLayout>
