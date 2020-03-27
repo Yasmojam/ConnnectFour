@@ -22,10 +22,10 @@
     <GridView
         android:id="@+id/grid_view"
         android:layout_width="370sp"
-        android:layout_height="370sp"
+        android:layout_height="430sp"
         android:layout_marginStart="22dp"
         android:layout_marginLeft="22dp"
-        android:layout_marginTop="230dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="22dp"
         android:layout_marginRight="22dp"
         android:layout_marginBottom="32dp"
@@ -45,8 +45,8 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        style="@style/AppTheme"
         android:id="@+id/playerTurn"
+        style="@style/AppTheme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="160dp"
@@ -54,6 +54,8 @@
         android:layout_marginTop="92dp"
         android:layout_marginEnd="161dp"
         android:layout_marginRight="161dp"
+        android:background="@android:color/transparent"
+        android:gravity="clip_horizontal|center|center_horizontal"
         android:text=""
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -61,7 +63,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:background="#00FFFFFF"
         android:id="@+id/boardInstruct"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -70,8 +71,12 @@
         android:layout_marginTop="64dp"
         android:layout_marginEnd="44dp"
         android:layout_marginRight="44dp"
+        android:layout_marginBottom="32dp"
+        android:background="#00FFFFFF"
+        android:gravity="clip_horizontal|center|center_horizontal"
         android:text="@string/instructionBoard"
         android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/grid_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
