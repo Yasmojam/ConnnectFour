@@ -45,11 +45,24 @@ public class GraphicalSettings extends AppCompatActivity {
                 }
             }
         });
+
+        goBack();
     }
     public void restartApp() {
         Intent intent = new Intent(getApplicationContext(), GraphicalSettings.class);
         startActivity(intent);
         finish();
+    }
+
+    public void goBack () {
+        Button back = findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent goBack = new Intent(GraphicalSettings.this, SettingsActivity.class);
+                startActivity(goBack);
+            }
+        });
     }
 
 }
