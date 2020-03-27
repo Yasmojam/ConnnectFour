@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:firstBaselineToTopHeight="80dp"
         android:fontFamily="@font/bangers"
-        android:text="Graphical Settings"
+        android:text="@string/graphicsSettings_title"
         android:textSize="35dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

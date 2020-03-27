@@ -8,61 +8,62 @@
 
 
     <TextView
-        android:id="@+id/settingsTitle"
+        android:id="@+id/textView3"
         android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="88dp"
-        android:background="@drawable/heading"
-        android:ellipsize="end"
+        android:layout_height="100dp"
         android:gravity="center"
-        android:text="@string/settingsTitle"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        android:textStyle="bold"
+        android:firstBaselineToTopHeight="80dp"
+        android:fontFamily="@font/bangers"
+        android:text="@string/settings_title"
+        android:textSize="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.065"
+        android:background="#00FFFFFF" />
+
 
     <Button
         android:id="@+id/graphicsSettingsButton"
         android:layout_width="175dp"
         android:layout_height="100dp"
+        android:layout_marginStart="118dp"
+        android:layout_marginLeft="118dp"
+        android:layout_marginTop="250dp"
         android:background="@drawable/btn_rounded"
         android:padding="15dp"
-        android:text="@string/graphicsSettingsButton"
+        android:text="@string/graphicsSettings_button"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/volumeSettings"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/settingsTitle" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/volumeSettings"
         android:layout_width="175dp"
         android:layout_height="100dp"
-        android:layout_marginBottom="98dp"
+        android:layout_marginStart="118dp"
+        android:layout_marginLeft="118dp"
+        android:layout_marginTop="26dp"
         android:background="@drawable/btn_rounded"
         android:padding="15dp"
-        android:text="@string/volumeSettingsButton"
+        android:text="@string/volumeSettings_button"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/button4"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/graphicsSettingsButton" />
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="88dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="161dp"
+        android:layout_marginLeft="161dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/btn_rounded"
-        android:text="@string/back"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        android:text="@string/back_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/volumeSettings"
-        app:layout_constraintVertical_bias="0.284"
-        tools:text="@string/back" />
+        tools:text="@string/back_button" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

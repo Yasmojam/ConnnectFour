@@ -8,36 +8,45 @@
         tools:context=".SettingsActivities.VolumeSettingsActivity">
 
 
+        <TextView
+            android:id="@+id/volumeSettingsTitle"
+            android:layout_width="250dp"
+            android:layout_height="150dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="52dp"
+            android:background="#00FFFFFF"
+            android:firstBaselineToTopHeight="80dp"
+            android:fontFamily="@font/bangers"
+            android:gravity="center"
+            android:text="@string/volumeSettings_title"
+            android:textSize="48dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="80dp" />
+
         <SeekBar
-            style="@style/Orange"
             android:id="@+id/soundFXSlider"
-            android:layout_width="0dp"
+            style="@style/Orange"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="128dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
+            android:layout_marginLeft="66dp"
+            android:layout_marginTop="22dp"
             android:max="100"
             android:progress="50"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/musicSlider" />
+            app:layout_constraintTop_toBottomOf="@+id/soundFxText"
+            android:layout_marginStart="66dp" />
 
     <SeekBar
-        style="@style/Orange"
         android:id="@+id/musicSlider"
-        android:layout_width="0dp"
+        style="@style/Orange"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginStart="66dp"
+        android:layout_marginLeft="66dp"
+        android:layout_marginTop="30dp"
         android:max="100"
         android:progress="50"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/musicText" />
 
@@ -45,68 +54,41 @@
         android:id="@+id/musicText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/musicVol"
+        android:layout_marginStart="148dp"
+        android:layout_marginLeft="148dp"
+        android:layout_marginTop="267dp"
+        android:background="#00FFFFFF"
+        android:text="@string/musicVol_text"
         android:textSize="18sp"
-        android:background="#00FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/musicSlider"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/stringTitle" />
-
-        <TextView
-            android:id="@+id/soundFxText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="16dp"
-            android:textSize="18sp"
-            android:background="#00FFFFFF"
-            android:text="@string/soundFXVol"
-            app:layout_constraintBottom_toTopOf="@+id/soundFXSlider"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/stringTitle"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:background="#00FFFFFF"
-        android:layout_marginStart="176dp"
-        android:layout_marginLeft="176dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="176dp"
-        android:layout_marginRight="176dp"
-        android:fontFamily="@font/bangers"
-
-        android:gravity="center"
-        android:text="@string/volumeSettingsTitle"
-        android:textSize="35sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/soundFxText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="117dp"
+        android:layout_marginLeft="117dp"
+        android:layout_marginTop="61dp"
+        android:background="#00FFFFFF"
+        android:text="@string/soundFXVol_text"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/musicSlider" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="161dp"
+        android:layout_marginLeft="161dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="162dp"
+        android:layout_marginRight="162dp"
         android:background="@drawable/btn_rounded"
         android:text="@string/Back"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/soundFXSlider"
-        app:layout_constraintVertical_bias="0.255" />
+        app:layout_constraintTop_toBottomOf="@+id/soundFXSlider" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
