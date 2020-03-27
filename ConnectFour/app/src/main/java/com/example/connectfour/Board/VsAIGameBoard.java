@@ -20,7 +20,6 @@ import com.example.connectfour.SettingsActivities.PauseActivity;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
-import java.util.concurrent.TimeUnit;
 
 /**Class which represents the "Vs AI" game board screen.**/
 public class VsAIGameBoard extends AppCompatActivity {
@@ -39,7 +38,6 @@ public class VsAIGameBoard extends AppCompatActivity {
     ArrayList<ImageModel> imageModels;
 
 
-
     ArrayList<Integer> filledSlot;
 
 
@@ -47,10 +45,10 @@ public class VsAIGameBoard extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         MediaPlayer media = MediaPlayer.create(VsAIGameBoard.this, R.raw.lol);
         //DARK MODE
-        if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
-            setTheme(R.style.DarkTheme);;
-        }
-        else {
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
+            setTheme(R.style.DarkTheme);
+            ;
+        } else {
             setTheme(R.style.AppTheme);
         }
 
@@ -79,7 +77,7 @@ public class VsAIGameBoard extends AppCompatActivity {
 
         imageModels = new ArrayList<ImageModel>();
 
-        for (int i = 0; i < image.length; i++){
+        for (int i = 0; i < image.length; i++) {
             ImageModel imageModel = new ImageModel();
             imageModel.setmThumbIds(image[i]);
             //add to array list of imageModels
@@ -93,20 +91,31 @@ public class VsAIGameBoard extends AppCompatActivity {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             //Tracks whose turn it is
             int turnNo = 0;
+
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //if turn number is even player one colour
                 if (!filledSlot.contains(position)) {
-                        playerTurnText.setText("AI Turn!");
-                        adapter.setBackgroundOfImageView(position, getPlayer1Col());
-                        filledSlot.add(position);
+                    filledSlot.add(position);
 
-                        //AI TAKES TURN and adds position to filled slots
+                    System.out.println("PLAYER CHOOSES: " + position);
+                    System.out.println("List of filled slots: " + filledSlot);
+
+                    playerTurnText.setText("AI Turn!");
+                    adapter.setBackgroundOfImageView(position, getPlayer1Col());
+
+
+                    //AI TAKES TURN and adds position to filled slots if board has slots
+                    if (filledSlot.size() < boardSize){
                         adapter.setBackgroundOfImageView(chooseAIMove(), getGetPlayer2Col());
                         playerTurnText.setText("Player 1 Turn!");
+                    }
+                    else{
+                        System.out.println("BOARD IS FULL");
+                    }
 
 
-                        adapter.notifyDataSetChanged();
+                    adapter.notifyDataSetChanged();
                 }
             }
         });
@@ -122,6 +131,7 @@ public class VsAIGameBoard extends AppCompatActivity {
         });
 
     }
+
     public int getPlayer1Col() {
         return player1Col;
     }
@@ -154,26 +164,48 @@ public class VsAIGameBoard extends AppCompatActivity {
         this.rows = rows;
     }
 
-    public int getBoardSize(){
+    public int getBoardSize() {
         return boardSize;
     }
 
-    public void setBoardSize(int rows, int columns){
-        boardSize = rows*columns;
+    public void setBoardSize(int rows, int columns) {
+        boardSize = rows * columns;
     }
 
     public ArrayList<Integer> getFilledSlot() {
         return filledSlot;
     }
 
-    public int chooseAIMove() {
-        int chosenAIPos = rand.nextInt(getBoardSize() + 1);
-        if (!getFilledSlot().contains(chosenAIPos)) {
-            filledSlot.add(chosenAIPos);
-            return chosenAIPos;
-        } else {
-            chooseAIMove();
-            return 0;
+    public boolean isPosValid(int position){
+        if (getFilledSlot().contains(position)){
+            return false;
         }
+        else {
+            return true;
+        }
+    }
+
+    public int chooseAIMove() {
+        int chosenAIPos = rand.nextInt(getBoardSize());
+        while (!isPosValid(chosenAIPos)){
+            System.out.println("AI TRIED: " + chosenAIPos);
+            chosenAIPos = rand.nextInt(getBoardSize());
+            if (isPosValid(chosenAIPos)){
+                filledSlot.add(chosenAIPos);
+
+                System.out.println("AI CHOOSES: " + chosenAIPos);
+                System.out.println("List of filled slots: " + filledSlot);
+                //Function will terminate here and not below if this new one is valid.
+                return chosenAIPos;
+            }
+        }
+        //If the first random chosen is valid it will play.
+        if (isPosValid(chosenAIPos)) {
+            filledSlot.add(chosenAIPos);
+        }
+        System.out.println("AI CHOOSES: " + chosenAIPos);
+        System.out.println("List of filled slots: " + filledSlot);
+
+        return chosenAIPos;
     }
 }
