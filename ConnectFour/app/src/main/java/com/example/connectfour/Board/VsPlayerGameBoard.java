@@ -27,6 +27,9 @@ public class VsPlayerGameBoard extends AppCompatActivity {
     int player1Col = Color.RED;
     int player2Col = Color.YELLOW;
 
+    char player1Counter = 'R';
+    char player2Counter = 'Y';
+
     private int rows;
     private int columns;
     private int boardSize;
@@ -36,6 +39,8 @@ public class VsPlayerGameBoard extends AppCompatActivity {
     GridView gridView;
     ArrayList<ImageModel> imageModels;
     ArrayList<Integer> filledSlot;
+
+    ConnectFourGame gameLogic;
 
 
     @Override
@@ -59,6 +64,10 @@ public class VsPlayerGameBoard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_board);
         media.start();
+
+
+        //Initialise game Logic back end
+        gameLogic = new ConnectFourGame(getRows(), getColumns());
 
 
         filledSlot = new ArrayList<Integer>();

@@ -37,7 +37,6 @@ public class VsAIGameBoard extends AppCompatActivity {
     Random rand = new Random();
     ArrayList<ImageModel> imageModels;
 
-
     ArrayList<Integer> filledSlot;
 
 

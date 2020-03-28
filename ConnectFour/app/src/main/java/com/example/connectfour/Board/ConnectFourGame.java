@@ -20,6 +20,10 @@ public class ConnectFourGame {
 
     private int chosenCol;
 
+    int[] gridViewPosRep;
+
+    int[][] convertedGridView;
+
     public ConnectFourGame(int width, int height) {
         this.width = width;
         this.height = height;
@@ -29,6 +33,21 @@ public class ConnectFourGame {
         for (int i = 0; i < height; i++){
             Arrays.fill(grid[i] = new char[width], '.');
         }
+
+        //create grid representation and populate
+        gridViewPosRep = new int[height*width];
+        for (int i = 0; i < height*width; i++){
+            gridViewPosRep[i] = i;
+        }
+
+        //convert this grid to 2d array
+        convertedGridView = new int[height][width];
+        for (int i = 0; i < height; i++){
+            for (int j = 0; j < width; j++){
+                convertedGridView[i][j] = gridViewPosRep[(j*height) + i];
+            }
+        }
+
     }
 
     //method for representing the board in strings
@@ -133,10 +152,36 @@ public class ConnectFourGame {
         }
     }
 
+    /**Method that returns column**/
+    public int getPositionCol(int position){
+        //Find the position in 2d array
+        int positionCol = 0 ;
+        for ( int i = 0; i < height; ++i ) {
+            for ( int j = 0; j < width; ++j ) {
+                if (convertedGridView[i][j] == position ) {
+                    // Found the correct i,j - return col
+                    positionCol = j;
+                }
+            }
+        }
+        return positionCol;
+    }
+
+
+    /**Method which returns position where counter is placed.**/
+    public int placeCounterPosition(char playerCounter, int position){
+        int chosenCol = getPositionCol(position);
+        for (int h = height - 1; h >= 0; h--){
+            if (grid[h][chosenCol] == '.'){
+                grid[lastTop = h][lastCol = chosenCol] = playerCounter; //make this slot the counter
+            }
+        }
+        return lastTop + lastCol;
+    }
     /**Method for processing player turn**/
-    public void chooseAndDrop(char playerCounter, int chosenCol){
-        if (isChosenColValid(chosenCol)){
-            placeCounter(playerCounter, chosenCol);
+    public void chooseAndDrop(char playerCounter, int position){
+        if (isChosenColValid(position)){
+            placeCounter(playerCounter, position);
         }
         else{
             return;
