@@ -24,6 +24,9 @@ public class SettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
+        /**
+         * Takes player to graphics settings when clicked
+         */
         Button graph = findViewById(R.id.graphicsSettingsButton);
         graph.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,6 +36,9 @@ public class SettingsActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * Takes player to the volume settings when clicked
+         */
         Button vol = findViewById(R.id.volumeSettings);
         vol.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,10 +48,9 @@ public class SettingsActivity extends AppCompatActivity {
             }
         });
 
-        goBack();
-    }
-
-    public void goBack() {
+        /**
+         * Takes player back to the start screen when 'Back' button clicked
+         */
         Button button4 = findViewById(R.id.button4);
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +59,9 @@ public class SettingsActivity extends AppCompatActivity {
                 startActivity(goBack);
             }
         });
+
     }
+
+
 
 }

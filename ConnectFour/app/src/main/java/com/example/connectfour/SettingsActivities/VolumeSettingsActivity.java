@@ -28,10 +28,12 @@ public class VolumeSettingsActivity extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
-
         goBack();
     }
 
+    /**
+     * Takes player back to the main Settings menu
+     */
     public void goBack () {
         Button back = findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
