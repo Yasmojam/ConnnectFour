@@ -194,7 +194,7 @@ public class ConnectFourGame {
                 grid[lastTop = h][lastCol = chosenCol] = playerCounter; //make this slot the counter
             }
         }
-        return getPositionRow(lastTop) + lastCol;
+        return lastTop + lastCol;
     }
 
     /**Method for processing player turn**/
