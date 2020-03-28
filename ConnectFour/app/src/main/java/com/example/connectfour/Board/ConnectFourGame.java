@@ -12,7 +12,7 @@ public class ConnectFourGame {
 
     private static final char[] players = {'R', 'Y'}; //define players Red R, Yellow Y
 
-    private final int width, height;  //board dimensions
+    private final int row, col;  //board dimensions
 
     private final char[][] grid;  //grid for board
 
@@ -24,27 +24,27 @@ public class ConnectFourGame {
 
     int[][] convertedGridView;
 
-    public ConnectFourGame(int width, int height) {
-        this.width = width;
-        this.height = height;
-        grid = new char[width][height];
+    public ConnectFourGame(int row, int col) {
+        this.row = row;
+        this.col = col;
+        grid = new char[col][];
 
         //initiate the grid with no counters
-        for (int i = 0; i < height; i++){
-            Arrays.fill(grid[i] = new char[width], '.');
+        for (int i = 0; i < col; i++){
+            Arrays.fill(grid[i] = new char[row], '.');
         }
 
         //create grid representation and populate
-        gridViewPosRep = new int[height*width];
-        for (int i = 0; i < height*width; i++){
+        gridViewPosRep = new int[col*row];
+        for (int i = 0; i < col*row; i++){
             gridViewPosRep[i] = i;
         }
 
         //convert this grid to 2d array
-        convertedGridView = new int[height][width];
-        for (int i = 0; i < height; i++){
-            for (int j = 0; j < width; j++){
-                convertedGridView[i][j] = gridViewPosRep[(j*height) + i];
+        convertedGridView = new int[col][row];
+        for (int i = 0; i < col; i++){
+            for (int j = 0; j < row; j++){
+                convertedGridView[i][j] = gridViewPosRep[(j*col) + i];
             }
         }
 
@@ -53,7 +53,7 @@ public class ConnectFourGame {
     //method for representing the board in strings
     @RequiresApi(api = Build.VERSION_CODES.N)
     public String toString(){
-        return IntStream.range(0, width).
+        return IntStream.range(0, row).
                 mapToObj(Integer::toString).
                 collect(Collectors.joining()) +
                 "\n" +
@@ -68,9 +68,9 @@ public class ConnectFourGame {
 
     //get string representation of the column containing rhe last play of the user
     public String vertical() {
-        StringBuilder stringBuilder = new StringBuilder(height);
+        StringBuilder stringBuilder = new StringBuilder(col);
 
-        for (int h = 0 ; h < height; h++) {
+        for (int h = 0; h < col; h++) {
             stringBuilder.append(grid[h][lastCol]);
         }
         return stringBuilder.toString();
@@ -78,12 +78,12 @@ public class ConnectFourGame {
 
     //get string representation of the "/" diagonals containing the last play of the user
     public String slashDiagonal(){
-        StringBuilder stringBuilder = new StringBuilder(height);
+        StringBuilder stringBuilder = new StringBuilder(col);
 
-        for (int h = 0; h < height; h++) {
+        for (int h = 0; h < col; h++) {
             int w = lastCol + lastTop - h;
 
-            if (0 <= w && w < width){
+            if (0 <= w && w < row){
                 stringBuilder.append(grid[h][w]);
             }
         }
@@ -92,12 +92,12 @@ public class ConnectFourGame {
 
     //get string representation of the "\" diagonals containing rhe last play of the user
     public String blackslashDiagonal(){
-        StringBuilder stringBuilder = new StringBuilder(height);
+        StringBuilder stringBuilder = new StringBuilder(col);
 
-        for (int h = 0; h < height; h++){
+        for (int h = 0; h < col; h++){
             int w = lastCol - lastTop + h;
 
-            if (0 <= w && w < width){
+            if (0 <= w && w < row){
                 stringBuilder.append(grid[h][w]);
             }
         }
@@ -133,7 +133,7 @@ public class ConnectFourGame {
 
     /**Method which checks if player's chosen column is valid (e.g. not full)**/
     public boolean isChosenColValid(int chosenCol){
-        if (!(0<= chosenCol && chosenCol < width)){
+        if (!(0<= chosenCol && chosenCol < row)){
             return true;
         }
         else{
@@ -144,7 +144,7 @@ public class ConnectFourGame {
 
     /**Method which places counter (R or Y) in first available row in the chosen column**/
     public void placeCounter(char playerCounter, int chosenCol){
-        for (int h = height - 1; h >= 0; h--){
+        for (int h = col - 1; h >= 0; h--){
             if (grid[h][chosenCol] == '.'){
                 grid[lastTop = h][lastCol = chosenCol] = playerCounter; //make this slot the counter
                 return;
@@ -152,12 +152,12 @@ public class ConnectFourGame {
         }
     }
 
-    /**Method that returns column**/
+    /**Method which returns column from chosen position.**/
     public int getPositionCol(int position){
         //Find the position in 2d array
         int positionCol = 0 ;
-        for ( int i = 0; i < height; ++i ) {
-            for ( int j = 0; j < width; ++j ) {
+        for (int i = 0; i < col; ++i ) {
+            for (int j = 0; j < row; ++j ) {
                 if (convertedGridView[i][j] == position ) {
                     // Found the correct i,j - return col
                     positionCol = j;
@@ -167,17 +167,36 @@ public class ConnectFourGame {
         return positionCol;
     }
 
+    /**Method which returns row from chosen position.**/
+    public int getPositionRow(int position){
+        //Find the position in 2d array
+        int positionRow = 0 ;
+        for (int i = 0; i < col; ++i ) {
+            for (int j = 0; j < row; ++j ) {
+                if (convertedGridView[i][j] == position ) {
+                    // Found the correct i,j - return row
+                    positionRow = i;
+                }
+            }
+        }
+        return positionRow;
+    }
+
+    /**Method which converts a row into gridview position by inputting **/
+    //    /**Method which returns position that the counter will be places in after accounting for top row.**/
+//    public int getPlayablePosFromChosenCol()
 
     /**Method which returns position where counter is placed.**/
     public int placeCounterPosition(char playerCounter, int position){
         int chosenCol = getPositionCol(position);
-        for (int h = height - 1; h >= 0; h--){
+        for (int h = col - 1; h >= 0; h--){
             if (grid[h][chosenCol] == '.'){
                 grid[lastTop = h][lastCol = chosenCol] = playerCounter; //make this slot the counter
             }
         }
-        return lastTop + lastCol;
+        return getPositionRow(lastTop) + lastCol;
     }
+
     /**Method for processing player turn**/
     public void chooseAndDrop(char playerCounter, int position){
         if (isChosenColValid(position)){
@@ -188,4 +207,11 @@ public class ConnectFourGame {
         }
     }
 
+    public int getLastCol() {
+        return lastCol;
+    }
+
+    public int getLastTop() {
+        return lastTop;
+    }
 }

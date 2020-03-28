@@ -102,16 +102,27 @@ public class VsPlayerGameBoard extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //if turn number is even player one colour
                 if (!filledSlot.contains(position)) {
+                    int playablePosition = 0;
                     if (turnNo % 2 == 0) {
                         playerTurnText.setText("Player 2 Turn!");
-                        adapter.setBackgroundOfImageView(position, getPlayer1Col());
+                        playablePosition = gameLogic.placeCounterPosition(player1Counter, position);
+                        adapter.setBackgroundOfImageView(playablePosition, getPlayer1Col());
+
+                        System.out.println("PLAYER 1 CHOOSES: " + playablePosition);
+
                     } else {
                         playerTurnText.setText("Player 1 Turn!");
-                        adapter.setBackgroundOfImageView(position, getGetPlayer2Col());
+                        playablePosition = gameLogic.placeCounterPosition(player2Counter,position);
+                        adapter.setBackgroundOfImageView(playablePosition, getPlayer2Col());
+
+                        System.out.println("PLAYER 2 CHOOSES: " + playablePosition);
                     }
                     adapter.notifyDataSetChanged();
                     filledSlot.add(position);
                     turnNo++;
+
+                    System.out.println("Last Col: " + gameLogic.getLastCol());
+                    System.out.println("Last top: " + gameLogic.getLastTop());
                 }
             }
         });
@@ -136,7 +147,7 @@ public class VsPlayerGameBoard extends AppCompatActivity {
         this.player1Col = player1Col;
     }
 
-    public int getGetPlayer2Col() {
+    public int getPlayer2Col() {
         return player2Col;
     }
 
