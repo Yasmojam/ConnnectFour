@@ -24,6 +24,9 @@ import java.util.Random;
 /**Class which represents the "Vs AI" game board screen.**/
 public class VsAIGameBoard extends AppCompatActivity {
 
+    public static final String EXTRA_ROWS = "com.example.connectfour.Board.EXTRA_ROWS";
+    public static final String EXTRA_COLUMNS = "com.example.connectfour.Board.EXTRA_COLUMNS";
+
     int player1Col = Color.RED;
     int player2Col = Color.YELLOW;
 
@@ -43,6 +46,7 @@ public class VsAIGameBoard extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         MediaPlayer media = MediaPlayer.create(VsAIGameBoard.this, R.raw.lol);
         //DARK MODE
         if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
@@ -52,10 +56,18 @@ public class VsAIGameBoard extends AppCompatActivity {
             setTheme(R.style.AppTheme);
         }
 
-        Intent intent = getIntent();
-        setRows(intent.getIntExtra(NewGameActivity.EXTRA_ROWS, 0));
-        setColumns(intent.getIntExtra(NewGameActivity.EXTRA_COLUMNS, 0));
-        setBoardSize(getRows(), getColumns());
+        if (savedInstanceState != null) {
+
+            setRows(8);
+            setColumns(8);
+            setBoardSize(getRows(), getColumns());
+        }
+        else {
+            Intent intent = getIntent();
+            setRows(intent.getIntExtra(NewGameActivity.EXTRA_ROWS, 0));
+            setColumns(intent.getIntExtra(NewGameActivity.EXTRA_COLUMNS, 0));
+            setBoardSize(getRows(), getColumns());
+        }
 
 
         super.onCreate(savedInstanceState);
@@ -125,11 +137,21 @@ public class VsAIGameBoard extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(VsAIGameBoard.this, PauseActivity.class);
+                intent.putExtra(EXTRA_ROWS, getRows());
+                intent.putExtra(EXTRA_COLUMNS, getColumns());
                 startActivity(intent);
                 media.stop();
             }
         });
 
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle savedInstanceState) {
+        savedInstanceState.putInt("rows", getRows());
+        savedInstanceState.putInt("columns", getColumns());
+
+        super.onSaveInstanceState(savedInstanceState);
     }
 
     public int getPlayer1Col() {

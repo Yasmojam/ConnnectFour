@@ -67,8 +67,7 @@ public class PauseActivity extends AppCompatActivity {
         resume.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent returnToGame = new Intent(PauseActivity.this, VsPlayerGameBoard.class);
-                startActivity(returnToGame);
+                finish();
             }
         });
     }
