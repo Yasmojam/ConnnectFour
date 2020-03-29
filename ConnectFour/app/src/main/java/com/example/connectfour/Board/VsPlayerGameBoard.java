@@ -3,7 +3,6 @@ package com.example.connectfour.Board;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
-
 import android.content.Intent;
 import android.graphics.Color;
 import android.media.MediaPlayer;
@@ -24,11 +23,13 @@ import java.util.Arrays;
 /**Class which represents the "Pass and Play" game board screen.**/
 public class VsPlayerGameBoard extends AppCompatActivity {
 
+    //Player counter colours.
     int player1Col = Color.RED;
     int player2Col = Color.YELLOW;
 
-    char player1Counter = 'R';
-    char player2Counter = 'Y';
+    //Player counter numbers.
+    char player1Counter = '1';
+    char player2Counter = '2';
 
     private int rows;
     private int columns;
@@ -40,13 +41,14 @@ public class VsPlayerGameBoard extends AppCompatActivity {
     ArrayList<ImageModel> imageModels;
     ArrayList<Integer> filledSlot;
 
-    ConnectFourGame gameLogic;
-
+    ConnectFourGame game;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+        //PLAY MUSIC
         MediaPlayer media = MediaPlayer.create(VsPlayerGameBoard.this, R.raw.lol);
+
         //DARK MODE
         if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES) {
             setTheme(R.style.DarkTheme);;
@@ -55,6 +57,7 @@ public class VsPlayerGameBoard extends AppCompatActivity {
             setTheme(R.style.AppTheme);
         }
 
+        //SET BOARD SIZE FROM NEW GAME DROP DOWN
         Intent intent = getIntent();
         setRows(intent.getIntExtra(NewGameActivity.EXTRA_ROWS, 0));
         setColumns(intent.getIntExtra(NewGameActivity.EXTRA_COLUMNS, 0));
@@ -66,13 +69,13 @@ public class VsPlayerGameBoard extends AppCompatActivity {
         media.start();
 
 
-        //Initialise game Logic back end
-        gameLogic = new ConnectFourGame(getRows(), getColumns());
+        //Initialise game logic.
+        game = new ConnectFourGame(getRows(), getColumns());
 
 
         filledSlot = new ArrayList<Integer>();
 
-        //initialise board to be chosen size and fill with board images
+        //Initialise board to be chosen size and fill with board images
         image = new int[boardSize];
         Arrays.fill(image, R.drawable.board);
 
@@ -102,27 +105,22 @@ public class VsPlayerGameBoard extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //if turn number is even player one colour
                 if (!filledSlot.contains(position)) {
-                    int playablePosition = 0;
+                    int playablePosition = game.chooseAndDropCounter(position);
                     if (turnNo % 2 == 0) {
                         playerTurnText.setText("Player 2 Turn!");
-                        playablePosition = gameLogic.placeCounterPosition(player1Counter, position);
                         adapter.setBackgroundOfImageView(playablePosition, getPlayer1Col());
 
                         System.out.println("PLAYER 1 CHOOSES: " + playablePosition);
 
                     } else {
                         playerTurnText.setText("Player 1 Turn!");
-                        playablePosition = gameLogic.placeCounterPosition(player2Counter,position);
                         adapter.setBackgroundOfImageView(playablePosition, getPlayer2Col());
 
                         System.out.println("PLAYER 2 CHOOSES: " + playablePosition);
                     }
                     adapter.notifyDataSetChanged();
-                    filledSlot.add(position);
+                    filledSlot.add(playablePosition);
                     turnNo++;
-
-                    System.out.println("Last Col: " + gameLogic.getLastCol());
-                    System.out.println("Last top: " + gameLogic.getLastTop());
                 }
             }
         });

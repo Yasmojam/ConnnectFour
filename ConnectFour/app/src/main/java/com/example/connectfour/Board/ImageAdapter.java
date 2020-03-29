@@ -60,9 +60,9 @@ public class ImageAdapter extends BaseAdapter {
                     //FOR 7X6
                     imageView.setLayoutParams(new GridView.LayoutParams(160,150));
                     break;
-                case 64:
-                    //FOR 8X8
-                    imageView.setLayoutParams(new GridView.LayoutParams(110,140));
+                case 56:
+                    //FOR 8X7
+                    imageView.setLayoutParams(new GridView.LayoutParams(130,140));
                     break;
             }
         }
