@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -40,8 +41,9 @@ public class VsAIGameBoard extends AppCompatActivity {
     Random rand = new Random();
     ArrayList<ImageModel> imageModels;
 
-
     ArrayList<Integer> filledSlot;
+
+    ConnectFourGame game;
 
 
     @Override
@@ -74,6 +76,8 @@ public class VsAIGameBoard extends AppCompatActivity {
         setContentView(R.layout.activity_vs_a_i_game_board);
         media.start();
 
+        //Initialise game logic.
+        game = new ConnectFourGame(getRows(), getColumns());
 
         filledSlot = new ArrayList<Integer>();
 
@@ -107,27 +111,32 @@ public class VsAIGameBoard extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //if turn number is even player one colour
-                if (!filledSlot.contains(position)) {
-                    filledSlot.add(position);
+                if (!filledSlot.contains(position) && turnNo % 2 == 0) {
+                    int playablePosition = game.chooseAndDropCounter(position);
+                    filledSlot.add(playablePosition);
+                    turnNo++;
 
                     System.out.println("PLAYER CHOOSES: " + position);
                     System.out.println("List of filled slots: " + filledSlot);
 
                     playerTurnText.setText("AI Turn!");
-                    adapter.setBackgroundOfImageView(position, getPlayer1Col());
+                    adapter.setBackgroundOfImageView(playablePosition, getPlayer1Col());
 
-
-                    //AI TAKES TURN and adds position to filled slots if board has slots
-                    if (filledSlot.size() < boardSize){
-                        adapter.setBackgroundOfImageView(chooseAIMove(), getGetPlayer2Col());
-                        playerTurnText.setText("Player 1 Turn!");
-                    }
-                    else{
-                        System.out.println("BOARD IS FULL");
-                    }
-
-
-                    adapter.notifyDataSetChanged();
+                    //PAUSE for 1s - AS cant just delay by sleep because pauses the front end too
+                    // so requires a handler for this process.
+                    (new Handler()).postDelayed(() -> {
+                        //AI TAKES TURN and adds position to filled slots if board has slots
+                        if (filledSlot.size() < boardSize) {
+                            int playableAIPosition = game.chooseAndDropCounter(chooseAIMove());
+                            adapter.setBackgroundOfImageView(playableAIPosition, getGetPlayer2Col());
+                            filledSlot.add(playableAIPosition);
+                            turnNo++;
+                            playerTurnText.setText("Player 1 Turn!");
+                        } else {
+                            System.out.println("BOARD IS FULL");
+                        }
+                        adapter.notifyDataSetChanged();
+                    }, 500);
                 }
             }
         });
@@ -213,17 +222,11 @@ public class VsAIGameBoard extends AppCompatActivity {
             System.out.println("AI TRIED: " + chosenAIPos);
             chosenAIPos = rand.nextInt(getBoardSize());
             if (isPosValid(chosenAIPos)){
-                filledSlot.add(chosenAIPos);
-
                 System.out.println("AI CHOOSES: " + chosenAIPos);
                 System.out.println("List of filled slots: " + filledSlot);
                 //Function will terminate here and not below if this new one is valid.
                 return chosenAIPos;
             }
-        }
-        //If the first random chosen is valid it will play.
-        if (isPosValid(chosenAIPos)) {
-            filledSlot.add(chosenAIPos);
         }
         System.out.println("AI CHOOSES: " + chosenAIPos);
         System.out.println("List of filled slots: " + filledSlot);
