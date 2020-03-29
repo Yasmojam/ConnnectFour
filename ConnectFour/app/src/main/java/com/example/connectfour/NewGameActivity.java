@@ -52,7 +52,7 @@ public class NewGameActivity extends AppCompatActivity {
         vsPlayerOnClickListener();
         //Initialises the vs AI button
         vsAIOnClickListener();
-
+        // Initialises back button
         goBack();
     }
 
@@ -122,6 +122,9 @@ public class NewGameActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Takes player back to the main screen when clicked
+     */
     public void goBack () {
         Button back = findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
