@@ -38,6 +38,9 @@ public class StartScreenActivity extends AppCompatActivity {
                 getChill().start();
             }
 
+        /**
+         * Takes player to the new game screen when clicked
+          */
         Button start = findViewById(R.id.startGameButton);
         start.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,6 +51,9 @@ public class StartScreenActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * Takes player to the settings activity when clicked
+         */
         Button options = findViewById(R.id.settings_button);
         options.setOnClickListener(new View.OnClickListener() {
             @Override

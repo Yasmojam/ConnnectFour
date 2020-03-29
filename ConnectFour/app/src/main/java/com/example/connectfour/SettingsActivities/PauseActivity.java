@@ -36,6 +36,9 @@ public class PauseActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * Takes player to the main screen when icon clicked
+         */
         ImageButton home = findViewById(R.id.home);
         home.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,6 +48,9 @@ public class PauseActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * Takes player to the settings menu when icon clicked
+         */
         ImageButton options = findViewById(R.id.settings);
         options.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,12 +60,14 @@ public class PauseActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * Takes player back to the game board when icon clicked
+         */
         Button resume = findViewById(R.id.resume);
         resume.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent returnToGame = new Intent(PauseActivity.this, VsPlayerGameBoard.class);
-                startActivity(returnToGame);
+                finish();
             }
         });
     }

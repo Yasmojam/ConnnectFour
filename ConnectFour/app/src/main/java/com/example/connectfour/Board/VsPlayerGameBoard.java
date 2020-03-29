@@ -58,12 +58,20 @@ public class VsPlayerGameBoard extends AppCompatActivity {
         }
 
         //SET BOARD SIZE FROM NEW GAME DROP DOWN
-        Intent intent = getIntent();
-        setRows(intent.getIntExtra(NewGameActivity.EXTRA_ROWS, 0));
-        setColumns(intent.getIntExtra(NewGameActivity.EXTRA_COLUMNS, 0));
-        setBoardSize(getRows(), getColumns());
-
-
+        //If save state exists
+        if (savedInstanceState != null) {
+            setRows(savedInstanceState.getInt("rows"));
+            setColumns(savedInstanceState.getInt("columns"));
+            setBoardSize(getRows(), getColumns());
+        }
+        //If being created for first time
+        else {
+            Intent intent = getIntent();
+            setRows(intent.getIntExtra(NewGameActivity.EXTRA_ROWS, 0));
+            setColumns(intent.getIntExtra(NewGameActivity.EXTRA_COLUMNS, 0));
+            setBoardSize(getRows(), getColumns());
+        }
+        
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_board);
         media.start();
@@ -135,6 +143,14 @@ public class VsPlayerGameBoard extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle savedInstanceState) {
+        savedInstanceState.putInt("rows", getRows());
+        savedInstanceState.putInt("columns", getColumns());
+
+        super.onSaveInstanceState(savedInstanceState);
     }
 
     public int getPlayer1Col() {
